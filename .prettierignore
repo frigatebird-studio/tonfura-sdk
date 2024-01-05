@@ -1,0 +1,7 @@
+dist/
+node_modules/
+docs/
+docs-md/
+etc/
+temp/
+src/types/output
