@@ -35,13 +35,6 @@ declare namespace TonfuraSDK {
   }
 
   namespace Core {
-    interface Payload<Params> {
-      jsonrpc: string;
-      id: number;
-      method: string;
-      params?: Params;
-    }
-
     namespace GetAddressInformation {
       type Params = {
         address: string;
@@ -283,13 +276,6 @@ declare namespace TonfuraSDK {
   }
 
   namespace Transact {
-    interface Payload<Params> {
-      jsonrpc: string;
-      id: number;
-      method: string;
-      params?: Params;
-    }
-
     namespace SendBoc {
       type Params = {
         boc: string;

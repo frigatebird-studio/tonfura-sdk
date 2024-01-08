@@ -10,5 +10,3 @@ export const DEFAULT_TONFURA_ID = 1;
 export const DEFAULT_TONFURA_API_KEY = 'DEFAULT_API_KEY';
 export const DEFAULT_NETWORK = Network.Mainnet;
 export const DEFAULT_MAX_RETRIES = 5;
-
-export const JSON_RPC_VERSION = '2.0';
