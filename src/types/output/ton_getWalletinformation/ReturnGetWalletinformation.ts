@@ -4,8 +4,10 @@ import {
   IsInt,
   ValidateNested,
   ValidateIf,
+  Validate,
 } from 'class-validator';
 import {Expose, Type} from 'class-transformer';
+import {IsNumberOrString} from '../custom';
 class LastTransactionId {
   @Expose()
   @IsString()
@@ -25,9 +27,10 @@ export class ReturnGetWalletinformation {
   @IsBoolean()
   wallet: boolean;
 
+  // will show number if address not active
   @Expose()
-  @IsString()
-  balance: string;
+  @Validate(IsNumberOrString)
+  balance: string | number;
 
   @Expose()
   @IsString()
