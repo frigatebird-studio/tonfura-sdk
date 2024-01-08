@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.0.0...v1.1.0) (2024-01-08)
+
+
+### Features
+
+* update types ([#1](https://github.com/frigatebird-studio/tonfura-sdk/issues/1)) ([0e2c71f](https://github.com/frigatebird-studio/tonfura-sdk/commit/0e2c71fac1234ad6dc1d158f593aa04ac1ff16a9))
+
 # 1.0.0 (2024-01-05)
 
 
