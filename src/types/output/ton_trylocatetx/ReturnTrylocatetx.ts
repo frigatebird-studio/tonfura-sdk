@@ -64,7 +64,7 @@ class RawMessage {
   // @Expose()
   // @ValidateNested()
   // @Type(() => MsgDataRaw)
-  msg_data: MsgDataRaw | MsgDataText;
+  msg_data: MsgDataRaw | MsgDataText | MsgDataEncrypt;
 }
 
 class MsgDataRaw {
@@ -82,6 +82,16 @@ class MsgDataRaw {
 }
 
 class MsgDataText {
+  @Expose()
+  @IsString()
+  '@type': string;
+
+  @Expose()
+  @IsString()
+  text: string;
+}
+
+class MsgDataEncrypt {
   @Expose()
   @IsString()
   '@type': string;
@@ -127,7 +137,7 @@ class OutMsg {
   // @Expose()
   // @ValidateNested()
   // @Type(() => MsgDataText)
-  msg_data: MsgDataText | MsgDataRaw;
+  msg_data: MsgDataText | MsgDataRaw | MsgDataEncrypt;
 
   @Expose()
   @IsString()

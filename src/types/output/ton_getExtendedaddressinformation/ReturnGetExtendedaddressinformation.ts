@@ -1,5 +1,12 @@
-import {IsString, IsInt, ValidateNested, ValidateIf} from 'class-validator';
+import {
+  IsString,
+  IsInt,
+  ValidateNested,
+  ValidateIf,
+  Validate,
+} from 'class-validator';
 import {Expose, Type} from 'class-transformer';
+import {IsNumberOrString} from '../custom';
 
 class AccountAddress {
   @Expose()
@@ -81,9 +88,10 @@ export class ReturnGetExtendedaddressinformation {
   @Type(() => AccountAddress)
   address: AccountAddress;
 
+  // will show number if address not active
   @Expose()
-  @IsString()
-  balance: string;
+  @Validate(IsNumberOrString)
+  balance: string | number;
 
   @Expose()
   @ValidateNested()

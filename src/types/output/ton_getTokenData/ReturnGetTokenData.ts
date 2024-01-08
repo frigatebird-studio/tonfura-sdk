@@ -1,26 +1,36 @@
 import {Expose, Type} from 'class-transformer';
-import {IsString, IsNumber, IsBoolean, ValidateNested} from 'class-validator';
+import {
+  IsString,
+  IsNumber,
+  IsBoolean,
+  ValidateNested,
+  IsOptional,
+} from 'class-validator';
 
 class Data {
-  @Expose()
+  @IsOptional()
   @IsString()
   image: string;
 
-  @Expose()
+  @IsOptional()
   @IsString()
   name: string;
 
-  @Expose()
+  @IsOptional()
   @IsString()
   symbol: string;
 
-  @Expose()
+  @IsOptional()
   @IsString()
   description: string;
 
-  @Expose()
+  @IsOptional()
   @IsString()
   decimals: string;
+
+  @IsOptional()
+  @IsString()
+  data: string;
 }
 
 class JettonContent {
@@ -47,6 +57,7 @@ export class ReturnGetTokenData {
   @IsString()
   admin_address: string;
 
+  @Expose()
   @ValidateNested()
   @Type(() => JettonContent)
   jetton_content: JettonContent;

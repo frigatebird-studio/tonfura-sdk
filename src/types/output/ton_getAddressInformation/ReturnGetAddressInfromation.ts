@@ -1,5 +1,6 @@
-import {IsInt, IsString, ValidateNested} from 'class-validator';
+import {IsInt, IsString, Validate, ValidateNested} from 'class-validator';
 import {Expose, Type} from 'class-transformer';
+import {IsNumberOrString} from '../custom';
 
 class LastTransactionId {
   @Expose()
@@ -43,8 +44,9 @@ export class ReturnGetAddressInfromation {
   '@type': string;
 
   @Expose()
-  @IsString()
-  balance: string;
+  // will show number if address not active
+  @Validate(IsNumberOrString)
+  balance: string | number;
 
   @Expose()
   @IsString()

@@ -29,6 +29,5 @@ export enum Method {
   // send boc
   TON_SEND_BOC = 'ton_sendBoc',
   TON_SEND_BOC_RETURN_HASH = 'ton_sendBocReturnHash',
-  TON_SEND_QUERY = 'ton_sendQuery',
   TON_ESTIMATEFEE = 'ton_estimateFee'
 }
