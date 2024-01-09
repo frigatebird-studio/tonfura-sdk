@@ -1,8 +1,7 @@
 import { AxiosResponse } from 'axios';
 
-import { Method } from '../constants';
+import { JSONRPC, Method } from '../constants';
 import { httpClient } from '../utils';
-import { JSONRPC, JSONRPCRequest, JSONRPCResponse } from './JsonRpc';
 import { TonfuraConfig } from './TonfuraConfig';
 
 /**
@@ -32,10 +31,10 @@ export class Transact {
     return httpClient.post<
       TonfuraSDK.Transact.SendBoc.Params,
       AxiosResponse<
-        JSONRPCResponse<TonfuraSDK.Transact.SendBoc.Response>,
+        JSONRPC.JSONRPCResponse<TonfuraSDK.Transact.SendBoc.Response>,
         TonfuraSDK.Transact.SendBoc.Params
       >,
-      JSONRPCRequest<TonfuraSDK.Transact.SendBoc.Params>
+      JSONRPC.JSONRPCRequest<TonfuraSDK.Transact.SendBoc.Params>
     >(this.config.apiKey, {
       ...this.commonParams,
       method: Method.TON_SEND_BOC,
@@ -55,10 +54,10 @@ export class Transact {
     return httpClient.post<
       TonfuraSDK.Transact.SendBocReturnHash.Params,
       AxiosResponse<
-        JSONRPCResponse<TonfuraSDK.Transact.SendBocReturnHash.Response>,
+        JSONRPC.JSONRPCResponse<TonfuraSDK.Transact.SendBocReturnHash.Response>,
         TonfuraSDK.Transact.SendBocReturnHash.Params
       >,
-      JSONRPCRequest<TonfuraSDK.Transact.SendBocReturnHash.Params>
+      JSONRPC.JSONRPCRequest<TonfuraSDK.Transact.SendBocReturnHash.Params>
     >(this.config.apiKey, {
       ...this.commonParams,
       method: Method.TON_SEND_BOC_RETURN_HASH,
