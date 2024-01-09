@@ -1,36 +1,35 @@
 declare namespace JSONRPC {
-  type JSONRPC = '2.0';
-  type JSONRPCID = string | number | null;
-  type JSONRPCParams<T = any> = T;
+  type VERSION = '2.0';
+  type ID = string | number | null;
 
-  interface JSONRPCError {
+  interface Error {
     code: number;
     message: string;
     data?: any;
   }
 
-  interface JSONRPCRequest<TParams = any> {
-    jsonrpc: JSONRPC;
+  interface Request<TParams extends TonfuraSDK.Params> {
+    jsonrpc: VERSION;
     method: string;
-    params?: JSONRPCParams<TParams>;
-    id?: JSONRPCID;
+    params?: TParams;
+    id?: ID;
   }
 
-  interface JSONRPCSuccessResponse<TResult> {
-    jsonrpc: JSONRPC;
-    id: JSONRPCID;
+  interface SuccessResponse<TResult> {
+    jsonrpc: VERSION;
+    id: ID;
     result: TResult;
     error?: undefined;
   }
 
-  interface JSONRPCErrorResponse {
-    jsonrpc: JSONRPC;
-    id: JSONRPCID;
+  interface ErrorResponse {
+    jsonrpc: VERSION;
+    id: ID;
     result?: undefined;
-    error: JSONRPCError;
+    error: Error;
   }
 
-  type JSONRPCResponse<TResponse = any> =
-    | JSONRPCSuccessResponse<TResponse>
-    | JSONRPCErrorResponse;
+  type Response<TResponse extends TonfuraSDK.Response> =
+    | SuccessResponse<TResponse>
+    | ErrorResponse;
 }
