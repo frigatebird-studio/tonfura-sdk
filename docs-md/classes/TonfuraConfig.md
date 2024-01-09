@@ -37,7 +37,7 @@ exposes the underlying providers for more advanced use cases.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraConfig.ts#L42)
+[api/TonfuraConfig.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L42)
 
 ## Properties
 
@@ -49,7 +49,7 @@ The Tonfura API key.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraConfig.ts#L21)
+[api/TonfuraConfig.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L21)
 
 ___
 
@@ -61,7 +61,7 @@ The Tonfura id.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:18](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraConfig.ts#L18)
+[api/TonfuraConfig.ts:18](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L18)
 
 ___
 
@@ -73,7 +73,7 @@ The maximum number of retries to perform.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:27](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraConfig.ts#L27)
+[api/TonfuraConfig.ts:27](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L27)
 
 ___
 
@@ -85,7 +85,7 @@ The Network that this SDK is associated with.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:24](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraConfig.ts#L24)
+[api/TonfuraConfig.ts:24](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L24)
 
 ___
 
@@ -98,7 +98,7 @@ and apiKey.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:33](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraConfig.ts#L33)
+[api/TonfuraConfig.ts:33](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L33)
 
 ## Methods
 
@@ -122,4 +122,4 @@ other less-common methods.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:63](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraConfig.ts#L63)
+[api/TonfuraConfig.ts:63](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L63)

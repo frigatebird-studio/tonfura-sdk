@@ -33,13 +33,13 @@ with `const tonfura = new Tonfura(config)` and then access the transact via `ton
 
 #### Defined in
 
-[api/Transact.ts:17](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/Transact.ts#L17)
+[api/Transact.ts:17](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Transact.ts#L17)
 
 ## Methods
 
 ### sendBoc
 
-▸ **sendBoc**(`boc`): `Promise`<`AxiosResponse`<`ReturnSendBoc`, `Params`\>\>
+▸ **sendBoc**(`boc`): `Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
 
 Send serialized boc file: fully packed and serialized external message to blockchain.
 
@@ -51,17 +51,17 @@ Send serialized boc file: fully packed and serialized external message to blockc
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`ReturnSendBoc`, `Params`\>\>
+`Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
 
 #### Defined in
 
-[api/Transact.ts:30](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/Transact.ts#L30)
+[api/Transact.ts:30](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Transact.ts#L30)
 
 ___
 
 ### sendBocReturnHash
 
-▸ **sendBocReturnHash**(`boc`): `Promise`<`AxiosResponse`<`ReturnSendBoc`, `Params`\>\>
+▸ **sendBocReturnHash**(`boc`): `Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
 
 Send serialized boc file: fully packed and serialized external message to blockchain. The method returns message hash.
 
@@ -73,8 +73,8 @@ Send serialized boc file: fully packed and serialized external message to blockc
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`ReturnSendBoc`, `Params`\>\>
+`Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
 
 #### Defined in
 
-[api/Transact.ts:51](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/Transact.ts#L51)
+[api/Transact.ts:51](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Transact.ts#L51)

@@ -22,7 +22,7 @@ Do not call this constructor directly. Instead, instantiate an instance of
 
 #### Defined in
 
-[api/TonfuraProvider.ts:13](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraProvider.ts#L13)
+[api/TonfuraProvider.ts:13](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraProvider.ts#L13)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[api/TonfuraProvider.ts:14](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/TonfuraProvider.ts#L14)
+[api/TonfuraProvider.ts:14](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraProvider.ts#L14)
