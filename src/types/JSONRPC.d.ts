@@ -19,13 +19,11 @@ declare namespace JSONRPC {
     jsonrpc: VERSION;
     id: ID;
     result: TResult;
-    error?: undefined;
   }
 
   interface ErrorResponse {
     jsonrpc: VERSION;
     id: ID;
-    result?: undefined;
     error: Error;
   }
 
