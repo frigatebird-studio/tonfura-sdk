@@ -34,14 +34,63 @@ declare namespace TonfuraSDK {
     url?: string;
   }
 
-  namespace Core {
-    interface Payload<Params> {
-      jsonrpc: string;
-      id: number;
-      method: string;
-      params?: Params;
-    }
+  type Params =
+    | Core.DetectAddress.Params
+    | Core.Estimatefee.Params
+    | Core.GetAddressInformation.Params
+    | Core.GetAddressbalance.Params
+    | Core.GetAddressstate.Params
+    | Core.GetBlockHeader.Params
+    | Core.GetBlockTransactions.Params
+    | Core.GetConfigParam.Params
+    | Core.GetConsensusBlock.Params
+    | Core.GetExtendedaddressinformation.Params
+    | Core.GetMasterchainBlockSignatures.Params
+    | Core.GetMasterchainInfo.Params
+    | Core.GetShardBlockProof.Params
+    | Core.GetTokenData.Params
+    | Core.GetTransactions.Params
+    | Core.GetWalletinformation.Params
+    | Core.LookupBlock.Params
+    | Core.PackAddress.Params
+    | Core.RunGetMethod.Params
+    | Core.Shards.Params
+    | Core.TryLocateResultTx.Params
+    | Core.TryLocateSourceTx.Params
+    | Core.TryLocateTx.Params
+    | Core.UnpackAddress.Params
+    | Transact.SendBoc.Params
+    | Transact.SendBocReturnHash.Params;
 
+  type Response =
+    | Core.DetectAddress.Response
+    | Core.Estimatefee.Response
+    | Core.GetAddressInformation.Response
+    | Core.GetAddressbalance.Response
+    | Core.GetAddressstate.Response
+    | Core.GetBlockHeader.Response
+    | Core.GetBlockTransactions.Response
+    | Core.GetConfigParam.Response
+    | Core.GetConsensusBlock.Response
+    | Core.GetExtendedaddressinformation.Response
+    | Core.GetMasterchainBlockSignatures.Response
+    | Core.GetMasterchainInfo.Response
+    | Core.GetShardBlockProof.Response
+    | Core.GetTokenData.Response
+    | Core.GetTransactions.Response
+    | Core.GetWalletinformation.Response
+    | Core.LookupBlock.Response
+    | Core.PackAddress.Response
+    | Core.RunGetMethod.Response
+    | Core.Shards.Response
+    | Core.TryLocateResultTx.Response
+    | Core.TryLocateSourceTx.Response
+    | Core.TryLocateTx.Response
+    | Core.UnpackAddress.Response
+    | Transact.SendBoc.Response
+    | Transact.SendBocReturnHash.Response;
+
+  namespace Core {
     namespace GetAddressInformation {
       type Params = {
         address: string;
@@ -283,13 +332,6 @@ declare namespace TonfuraSDK {
   }
 
   namespace Transact {
-    interface Payload<Params> {
-      jsonrpc: string;
-      id: number;
-      method: string;
-      params?: Params;
-    }
-
     namespace SendBoc {
       type Params = {
         boc: string;

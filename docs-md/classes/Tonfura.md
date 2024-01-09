@@ -34,7 +34,7 @@ different network or API key, create a new instance of [Tonfura](Tonfura.md).
 
 #### Defined in
 
-[api/Tonfura.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/Tonfura.ts#L42)
+[api/Tonfura.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Tonfura.ts#L42)
 
 ## Properties
 
@@ -47,7 +47,7 @@ and allows access to the underlying providers.
 
 #### Defined in
 
-[api/Tonfura.ts:31](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/Tonfura.ts#L31)
+[api/Tonfura.ts:31](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Tonfura.ts#L31)
 
 ___
 
@@ -59,7 +59,7 @@ The `core` Tonfura's enhanced APIs.
 
 #### Defined in
 
-[api/Tonfura.ts:19](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/Tonfura.ts#L19)
+[api/Tonfura.ts:19](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Tonfura.ts#L19)
 
 ___
 
@@ -72,4 +72,4 @@ checking on the state of submitted transasctions.
 
 #### Defined in
 
-[api/Tonfura.ts:25](https://github.com/frigatebird-studio/tonfura-sdk/blob/d4abfff/src/api/Tonfura.ts#L25)
+[api/Tonfura.ts:25](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Tonfura.ts#L25)
