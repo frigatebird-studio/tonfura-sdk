@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 
-import { JSONRPC, Method } from '../constants';
+import { JSON_RPC, Method } from '../constants';
 import { httpClient } from '../utils';
 import { TonfuraConfig } from './TonfuraConfig';
 
@@ -15,7 +15,7 @@ export class Core {
   private commonParams;
   constructor(private readonly config: TonfuraConfig) {
     this.commonParams = {
-      jsonrpc: JSONRPC,
+      jsonrpc: JSON_RPC,
       id: this.config.id
     };
   }
