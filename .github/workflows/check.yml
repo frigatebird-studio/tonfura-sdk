@@ -25,6 +25,12 @@ jobs:
       - name: Unit Tests
         run: |
           yarn test
+      - name: Build
+        run: |
+          yarn build
+      - name: Docs
+        run: |
+          yarn docs && yarn docs-md
       # - name: Integration Tests
       #   run: |
       #     yarn test-integration
