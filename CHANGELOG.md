@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.1.1...v1.1.2) (2024-01-10)
+
+
+### Bug Fixes
+
+* correct modules naming ([#4](https://github.com/frigatebird-studio/tonfura-sdk/issues/4)) ([b531285](https://github.com/frigatebird-studio/tonfura-sdk/commit/b531285ab1df1ce38b39580f3c0b1b8967829cd6))
+
 ## [1.1.1](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.1.0...v1.1.1) (2024-01-09)
 
 
