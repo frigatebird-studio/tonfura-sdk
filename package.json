@@ -15,7 +15,6 @@
     "lint": "eslint -c .eslintrc.js '**/*.ts' --ignore-path '.gitignore'",
     "lint-file": "eslint --fix",
     "test": "jest test/unit",
-    "test-integration": "jest test/integration",
     "docs": "typedoc --plugin none --out docs src/index.ts",
     "docs-md": "typedoc --plugin typedoc-plugin-markdown --out docs-md src/index.ts",
     "prepare": "husky install"
