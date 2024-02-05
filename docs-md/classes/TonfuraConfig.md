@@ -14,7 +14,6 @@ exposes the underlying providers for more advanced use cases.
 ### Properties
 
 - [apiKey](TonfuraConfig.md#apikey)
-- [id](TonfuraConfig.md#id)
 - [maxRetries](TonfuraConfig.md#maxretries)
 - [network](TonfuraConfig.md#network)
 - [url](TonfuraConfig.md#url)
@@ -37,7 +36,7 @@ exposes the underlying providers for more advanced use cases.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L42)
+[api/TonfuraConfig.ts:38](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraConfig.ts#L38)
 
 ## Properties
 
@@ -49,19 +48,7 @@ The Tonfura API key.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L21)
-
-___
-
-### id
-
-• `Readonly` **id**: `number`
-
-The Tonfura id.
-
-#### Defined in
-
-[api/TonfuraConfig.ts:18](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L18)
+[api/TonfuraConfig.ts:17](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraConfig.ts#L17)
 
 ___
 
@@ -73,7 +60,7 @@ The maximum number of retries to perform.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:27](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L27)
+[api/TonfuraConfig.ts:23](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraConfig.ts#L23)
 
 ___
 
@@ -85,7 +72,7 @@ The Network that this SDK is associated with.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:24](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L24)
+[api/TonfuraConfig.ts:20](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraConfig.ts#L20)
 
 ___
 
@@ -98,7 +85,7 @@ and apiKey.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:33](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L33)
+[api/TonfuraConfig.ts:29](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraConfig.ts#L29)
 
 ## Methods
 
@@ -109,12 +96,8 @@ and apiKey.
 Returns an TonfuraProvider instance. Only one provider is created per
 Tonfura instance.
 
-The TonfuraProvider is a wrapper around `TonfuraProvider` class and
-has been expanded to support Tonfura's Enhanced APIs.
-
-Most common methods on the provider are available as top-level methods on
-the [Tonfura](Tonfura.md) instance, but the provider is exposed here to access
-other less-common methods.
+The TonfuraProvider is a wrapper around `axios` class and
+has been expanded to support Tonfura's APIs.
 
 #### Returns
 
@@ -122,4 +105,4 @@ other less-common methods.
 
 #### Defined in
 
-[api/TonfuraConfig.ts:63](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraConfig.ts#L63)
+[api/TonfuraConfig.ts:54](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraConfig.ts#L54)

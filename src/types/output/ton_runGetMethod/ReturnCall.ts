@@ -1,5 +1,5 @@
-import {Expose, Type} from 'class-transformer';
-import {IsArray, IsInt, IsString, ValidateIf} from 'class-validator';
+import {Expose} from 'class-transformer';
+import {IsInt, IsString} from 'class-validator';
 
 export class ReturnCall {
   @Expose()
@@ -10,10 +10,8 @@ export class ReturnCall {
   @IsInt()
   gas_used: number;
 
-  @IsArray()
-  @Type(() => Array)
-  @ValidateIf(o => o.stack.length > 0)
-  stack: string[][];
+  @Expose()
+  stack: any;
 
   @Expose()
   @IsInt()

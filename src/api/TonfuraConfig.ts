@@ -2,7 +2,6 @@ import {
   DEFAULT_MAX_RETRIES,
   DEFAULT_NETWORK,
   DEFAULT_TONFURA_API_KEY,
-  DEFAULT_TONFURA_ID,
   Network
 } from '../constants';
 import type { TonfuraProvider } from './TonfuraProvider';
@@ -14,9 +13,6 @@ import type { TonfuraProvider } from './TonfuraProvider';
  * @public
  */
 export class TonfuraConfig {
-  /** The Tonfura id. */
-  readonly id: number;
-
   /** The Tonfura API key. */
   readonly apiKey: string;
 
@@ -40,7 +36,6 @@ export class TonfuraConfig {
   private _baseTonfuraProvider: Promise<TonfuraProvider> | undefined;
 
   constructor(config?: TonfuraSDK.Settings) {
-    this.id = config?.id || DEFAULT_TONFURA_ID;
     this.apiKey = config?.apiKey || DEFAULT_TONFURA_API_KEY;
     this.network = config?.network || DEFAULT_NETWORK;
     this.maxRetries = config?.maxRetries || DEFAULT_MAX_RETRIES;
@@ -51,12 +46,8 @@ export class TonfuraConfig {
    * Returns an TonfuraProvider instance. Only one provider is created per
    * Tonfura instance.
    *
-   * The TonfuraProvider is a wrapper around `TonfuraProvider` class and
-   * has been expanded to support Tonfura's Enhanced APIs.
-   *
-   * Most common methods on the provider are available as top-level methods on
-   * the {@link Tonfura} instance, but the provider is exposed here to access
-   * other less-common methods.
+   * The TonfuraProvider is a wrapper around `axios` class and
+   * has been expanded to support Tonfura's APIs.
    *
    * @public
    */

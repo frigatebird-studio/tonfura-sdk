@@ -1,7 +1,4 @@
-import { AxiosResponse } from 'axios';
-
-import { JSON_RPC, Method } from '../constants';
-import { httpClient } from '../utils';
+import { Method } from '../constants';
 import { TonfuraConfig } from './TonfuraConfig';
 
 /**
@@ -12,13 +9,7 @@ import { TonfuraConfig } from './TonfuraConfig';
  */
 export class Core {
   /** @internal */
-  private commonParams;
-  constructor(private readonly config: TonfuraConfig) {
-    this.commonParams = {
-      jsonrpc: JSON_RPC,
-      id: this.config.id
-    };
-  }
+  constructor(private readonly config: TonfuraConfig) {}
 
   /**
    * Returns the information of a given address.
@@ -30,18 +21,11 @@ export class Core {
   async getAddressInformation(
     address: TonfuraSDK.Core.GetAddressInformation.Params['address']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetAddressInformation.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetAddressInformation.Response>,
-        TonfuraSDK.Core.GetAddressInformation.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetAddressInformation.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_ADDRESS_INFO,
-      params: { address }
-    });
+      TonfuraSDK.Core.GetAddressInformation.Response
+    >(Method.TON_GET_ADDRESS_INFO, { address });
   }
 
   /**
@@ -57,18 +41,11 @@ export class Core {
   async getExtendedAddressInformation(
     address: TonfuraSDK.Core.GetExtendedaddressinformation.Params['address']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetExtendedaddressinformation.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetExtendedaddressinformation.Response>,
-        TonfuraSDK.Core.GetExtendedaddressinformation.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetExtendedaddressinformation.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_EXTENDEDADDRESSINFORMATION,
-      params: { address }
-    });
+      TonfuraSDK.Core.GetExtendedaddressinformation.Response
+    >(Method.TON_GET_EXTENDEDADDRESSINFORMATION, { address });
   }
 
   /**
@@ -82,18 +59,11 @@ export class Core {
   async getWalletInformation(
     address: TonfuraSDK.Core.GetWalletinformation.Params['address']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetWalletinformation.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetWalletinformation.Response>,
-        TonfuraSDK.Core.GetWalletinformation.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetWalletinformation.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_WALLET_INFORMATION,
-      params: { address }
-    });
+      TonfuraSDK.Core.GetWalletinformation.Response
+    >(Method.TON_GET_WALLET_INFORMATION, { address });
   }
 
   /**
@@ -105,18 +75,11 @@ export class Core {
   async getAddressBalance(
     address: TonfuraSDK.Core.GetAddressbalance.Params['address']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetAddressbalance.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetAddressbalance.Response>,
-        TonfuraSDK.Core.GetAddressbalance.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetAddressbalance.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_ADDRESS_BALANCE,
-      params: { address }
-    });
+      TonfuraSDK.Core.GetAddressbalance.Response
+    >(Method.TON_GET_ADDRESS_BALANCE, { address });
   }
 
   /**
@@ -128,18 +91,11 @@ export class Core {
   async getAddressState(
     address: TonfuraSDK.Core.GetAddressstate.Params['address']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetAddressstate.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetAddressstate.Response>,
-        TonfuraSDK.Core.GetAddressstate.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetAddressstate.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_ADDRESSSTATE,
-      params: { address }
-    });
+      TonfuraSDK.Core.GetAddressstate.Response
+    >(Method.TON_GET_ADDRESSSTATE, { address });
   }
 
   /**
@@ -149,18 +105,11 @@ export class Core {
    * @public
    */
   async packAddress(address: TonfuraSDK.Core.PackAddress.Params['address']) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.PackAddress.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.PackAddress.Response>,
-        TonfuraSDK.Core.PackAddress.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.PackAddress.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_PACK_ADDRESS,
-      params: { address }
-    });
+      TonfuraSDK.Core.PackAddress.Response
+    >(Method.TON_PACK_ADDRESS, { address });
   }
 
   /**
@@ -172,18 +121,11 @@ export class Core {
   async unpackAddress(
     address: TonfuraSDK.Core.UnpackAddress.Params['address']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.UnpackAddress.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.UnpackAddress.Response>,
-        TonfuraSDK.Core.UnpackAddress.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.UnpackAddress.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_UNPACK_ADDRESS,
-      params: { address }
-    });
+      TonfuraSDK.Core.UnpackAddress.Response
+    >(Method.TON_UNPACK_ADDRESS, { address });
   }
 
   /**
@@ -195,18 +137,11 @@ export class Core {
   async detectAddress(
     address: TonfuraSDK.Core.DetectAddress.Params['address']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.DetectAddress.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.DetectAddress.Response>,
-        TonfuraSDK.Core.DetectAddress.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.DetectAddress.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_DETECT_ADDRESS,
-      params: { address }
-    });
+      TonfuraSDK.Core.DetectAddress.Response
+    >(Method.TON_DETECT_ADDRESS, { address });
   }
 
   /**
@@ -216,18 +151,11 @@ export class Core {
    * @public
    */
   async getTokenData(address: TonfuraSDK.Core.GetTokenData.Params['address']) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetTokenData.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetTokenData.Response>,
-        TonfuraSDK.Core.GetTokenData.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetTokenData.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_TOKEN_DATA,
-      params: { address }
-    });
+      TonfuraSDK.Core.GetTokenData.Response
+    >(Method.TON_GET_TOKEN_DATA, { address });
   }
 
   /**
@@ -236,17 +164,11 @@ export class Core {
    * @public
    */
   async getMasterchainInfo() {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetMasterchainInfo.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetMasterchainInfo.Response>,
-        TonfuraSDK.Core.GetMasterchainInfo.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetMasterchainInfo.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_MASTERCHAININFO
-    });
+      TonfuraSDK.Core.GetMasterchainInfo.Response
+    >(Method.TON_GET_MASTERCHAININFO);
   }
 
   /**
@@ -258,18 +180,11 @@ export class Core {
   async getMasterchainBlockSignatures(
     seqno: TonfuraSDK.Core.GetMasterchainBlockSignatures.Params['seqno']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetMasterchainBlockSignatures.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetMasterchainBlockSignatures.Response>,
-        TonfuraSDK.Core.GetMasterchainBlockSignatures.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetMasterchainBlockSignatures.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_MASTERCHAINBLOCKSIGNATURES,
-      params: { seqno }
-    });
+      TonfuraSDK.Core.GetMasterchainBlockSignatures.Response
+    >(Method.TON_GET_MASTERCHAINBLOCKSIGNATURES, { seqno });
   }
 
   /**
@@ -279,18 +194,11 @@ export class Core {
    * @public
    */
   async getShardBlockProof(params: TonfuraSDK.Core.GetShardBlockProof.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetShardBlockProof.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetShardBlockProof.Response>,
-        TonfuraSDK.Core.GetShardBlockProof.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetShardBlockProof.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_SHARDBLOCKPROOF,
-      params
-    });
+      TonfuraSDK.Core.GetShardBlockProof.Response
+    >(Method.TON_GET_SHARDBLOCKPROOF, params);
   }
 
   /**
@@ -299,17 +207,11 @@ export class Core {
    * @public
    */
   async getConsensusBlock() {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetConsensusBlock.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetConsensusBlock.Response>,
-        TonfuraSDK.Core.GetConsensusBlock.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetConsensusBlock.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_CONSENSUSBLOCK
-    });
+      TonfuraSDK.Core.GetConsensusBlock.Response
+    >(Method.TON_GET_CONSENSUSBLOCK);
   }
 
   /**
@@ -319,18 +221,11 @@ export class Core {
    * @public
    */
   async lookupBlock(params: TonfuraSDK.Core.LookupBlock.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.LookupBlock.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.LookupBlock.Response>,
-        TonfuraSDK.Core.LookupBlock.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.LookupBlock.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_LOOKUP_BLOCK,
-      params
-    });
+      TonfuraSDK.Core.LookupBlock.Response
+    >(Method.TON_LOOKUP_BLOCK, params);
   }
 
   /**
@@ -340,18 +235,11 @@ export class Core {
    * @public
    */
   async shards(seqno: TonfuraSDK.Core.Shards.Params['seqno']) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.Shards.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.Shards.Response>,
-        TonfuraSDK.Core.Shards.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.Shards.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_SHARDS,
-      params: { seqno }
-    });
+      TonfuraSDK.Core.Shards.Response
+    >(Method.TON_SHARDS, { seqno });
   }
 
   /**
@@ -361,18 +249,11 @@ export class Core {
    * @public
    */
   async getBlockHeader(params: TonfuraSDK.Core.GetBlockHeader.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetBlockHeader.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetBlockHeader.Response>,
-        TonfuraSDK.Core.GetBlockHeader.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetBlockHeader.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_BLOCKHEADER,
-      params
-    });
+      TonfuraSDK.Core.GetBlockHeader.Response
+    >(Method.TON_GET_BLOCKHEADER, params);
   }
 
   /**
@@ -382,18 +263,11 @@ export class Core {
    * @public
    */
   async getTransactions(params: TonfuraSDK.Core.GetTransactions.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetTransactions.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetTransactions.Response>,
-        TonfuraSDK.Core.GetTransactions.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetTransactions.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_TRANSACTIONS,
-      params
-    });
+      TonfuraSDK.Core.GetTransactions.Response
+    >(Method.TON_GET_TRANSACTIONS, params);
   }
 
   /**
@@ -405,18 +279,11 @@ export class Core {
   async getBlockTransactions(
     params: TonfuraSDK.Core.GetBlockTransactions.Params
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetBlockTransactions.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetBlockTransactions.Response>,
-        TonfuraSDK.Core.GetBlockTransactions.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetBlockTransactions.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_BLOCKHEADER,
-      params
-    });
+      TonfuraSDK.Core.GetBlockTransactions.Response
+    >(Method.TON_GET_BLOCK_TRANSACTIONS, params);
   }
 
   /**
@@ -426,18 +293,11 @@ export class Core {
    * @public
    */
   async tryLocateTx(params: TonfuraSDK.Core.TryLocateTx.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.TryLocateTx.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.TryLocateTx.Response>,
-        TonfuraSDK.Core.TryLocateTx.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.TryLocateTx.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_TRYLOCATETX,
-      params
-    });
+      TonfuraSDK.Core.TryLocateTx.Response
+    >(Method.TON_TRYLOCATETX, params);
   }
 
   /**
@@ -447,18 +307,11 @@ export class Core {
    * @public
    */
   async tryLocateResultTx(params: TonfuraSDK.Core.TryLocateResultTx.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.TryLocateResultTx.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.TryLocateResultTx.Response>,
-        TonfuraSDK.Core.TryLocateResultTx.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.TryLocateResultTx.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_TRYLOCATERESULTTX,
-      params
-    });
+      TonfuraSDK.Core.TryLocateResultTx.Response
+    >(Method.TON_TRYLOCATERESULTTX, params);
   }
 
   /**
@@ -468,18 +321,11 @@ export class Core {
    * @public
    */
   async tryLocateSourceTx(params: TonfuraSDK.Core.TryLocateSourceTx.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.TryLocateSourceTx.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.TryLocateSourceTx.Response>,
-        TonfuraSDK.Core.TryLocateSourceTx.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.TryLocateSourceTx.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_TRYLOCATESOURCETX,
-      params
-    });
+      TonfuraSDK.Core.TryLocateSourceTx.Response
+    >(Method.TON_TRYLOCATESOURCETX, params);
   }
 
   /**
@@ -489,18 +335,11 @@ export class Core {
    * @public
    */
   async getConfigParam(params: TonfuraSDK.Core.GetConfigParam.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.GetConfigParam.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.GetConfigParam.Response>,
-        TonfuraSDK.Core.GetConfigParam.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.GetConfigParam.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_GET_CONFIGPARAM,
-      params
-    });
+      TonfuraSDK.Core.GetConfigParam.Response
+    >(Method.TON_GET_CONFIGPARAM, params);
   }
 
   /**
@@ -510,18 +349,11 @@ export class Core {
    * @public
    */
   async runGetMethod(params: TonfuraSDK.Core.RunGetMethod.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.RunGetMethod.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.RunGetMethod.Response>,
-        TonfuraSDK.Core.RunGetMethod.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.RunGetMethod.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_RUN_GET_METHOD,
-      params
-    });
+      TonfuraSDK.Core.RunGetMethod.Response
+    >(Method.TON_RUN_GET_METHOD, params);
   }
 
   /**
@@ -531,17 +363,10 @@ export class Core {
    * @public
    */
   async estimateFee(params: TonfuraSDK.Core.Estimatefee.Params) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Core.Estimatefee.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Core.Estimatefee.Response>,
-        TonfuraSDK.Core.Estimatefee.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Core.Estimatefee.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_ESTIMATEFEE,
-      params
-    });
+      TonfuraSDK.Core.Estimatefee.Response
+    >(Method.TON_ESTIMATEFEE, params);
   }
 }

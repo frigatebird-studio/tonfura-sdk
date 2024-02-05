@@ -10,36 +10,16 @@ with `const tonfura = new Tonfura(config)` and then access the transact via `ton
 
 ## Table of contents
 
-### Constructors
-
-- [constructor](Transact.md#constructor)
-
 ### Methods
 
 - [sendBoc](Transact.md#sendboc)
 - [sendBocReturnHash](Transact.md#sendbocreturnhash)
 
-## Constructors
-
-### constructor
-
-• **new Transact**(`config`)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | [`TonfuraConfig`](TonfuraConfig.md) |
-
-#### Defined in
-
-[api/Transact.ts:17](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Transact.ts#L17)
-
 ## Methods
 
 ### sendBoc
 
-▸ **sendBoc**(`boc`): `Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
+▸ **sendBoc**(`boc`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnSendBoc`\>, `any`\>\>
 
 Send serialized boc file: fully packed and serialized external message to blockchain.
 
@@ -51,17 +31,17 @@ Send serialized boc file: fully packed and serialized external message to blockc
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnSendBoc`\>, `any`\>\>
 
 #### Defined in
 
-[api/Transact.ts:30](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Transact.ts#L30)
+[api/Transact.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Transact.ts#L21)
 
 ___
 
 ### sendBocReturnHash
 
-▸ **sendBocReturnHash**(`boc`): `Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
+▸ **sendBocReturnHash**(`boc`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnSendBoc`\>, `any`\>\>
 
 Send serialized boc file: fully packed and serialized external message to blockchain. The method returns message hash.
 
@@ -73,8 +53,8 @@ Send serialized boc file: fully packed and serialized external message to blockc
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnSendBoc`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnSendBoc`\>, `any`\>\>
 
 #### Defined in
 
-[api/Transact.ts:51](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Transact.ts#L51)
+[api/Transact.ts:35](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Transact.ts#L35)

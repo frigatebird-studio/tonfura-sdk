@@ -3,12 +3,15 @@ export enum Network {
   Testnet = 'testnet'
 }
 
-export const TONFURA_API_BASE_URL =
-  'https://tonfura-api-production.fdc.ai/v1/json-rpc';
-
-export const DEFAULT_TONFURA_ID = 1;
 export const DEFAULT_TONFURA_API_KEY = 'DEFAULT_API_KEY';
 export const DEFAULT_NETWORK = Network.Mainnet;
 export const DEFAULT_MAX_RETRIES = 5;
 
-export const JSON_RPC: JSONRPC.VERSION = '2.0';
+/**
+ * Returns the base URL for making Tonfura API requests.
+ *
+ * @internal
+ */
+export function getTonfuraHttpUrl(_network: Network, apiKey: string): string {
+  return `https://api.tonfura.com/v1/json-rpc/${apiKey}`;
+}

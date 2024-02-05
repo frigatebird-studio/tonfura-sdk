@@ -5,24 +5,24 @@
 SDK's custom implementation of 'TonfuraProvider'.
 
 Do not call this constructor directly. Instead, instantiate an instance of
-[Tonfura](Tonfura.md) and call {@link Tonfura.config.getProvider()}.
+[Tonfura](Tonfura.md) and call {@link TonfuraSDK.config.getProvider()}.
 
 ## Table of contents
 
 ### Properties
 
-- [apiKey](TonfuraProvider.md#apikey)
+- [baseUrl](TonfuraProvider.md#baseurl)
 - [maxRetries](TonfuraProvider.md#maxretries)
 
 ## Properties
 
-### apiKey
+### baseUrl
 
-• `Readonly` **apiKey**: `string`
+• `Readonly` **baseUrl**: `string`
 
 #### Defined in
 
-[api/TonfuraProvider.ts:13](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraProvider.ts#L13)
+[api/TonfuraProvider.ts:16](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraProvider.ts#L16)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[api/TonfuraProvider.ts:14](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/TonfuraProvider.ts#L14)
+[api/TonfuraProvider.ts:17](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/TonfuraProvider.ts#L17)

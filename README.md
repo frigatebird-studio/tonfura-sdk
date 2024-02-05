@@ -43,7 +43,7 @@ The `Tonfura` object returned by `new Tonfura()` provides access to the Tonfura 
 
 The Tonfura SDK currently supports the following namespaces:
 
-- `core`: All commonly-used Provider methods and Tonfura Enhanced API methods
+- `core`: All commonly-used Ton's API methods
 - `transact`: All Tonfura Transaction API methods
 
 <a name="tonfura-settings"></a>
@@ -75,31 +75,17 @@ The `Transact` contains methods used for simulating and sending transactions.
 
 <a name="exception-handle"></a>
 
-## Exception Handle
+## Error Handling
 
-| Code   | Possible Return Message | Description                                                                                           |
-| :----- | :---------------------- | :---------------------------------------------------------------------------------------------------- |
-| -32000 | Server error            | Reserved for implementation-defined server-errors. See hint below.                                    |
-| -32600 | Invalid Request         | The JSON sent is not a valid Request object.                                                          |
-| -32601 | Method not found        | The method does not exist / is not available.                                                         |
-| -32602 | Invalid parameter       | Invalid method parameter(s).                                                                          |
-| -32603 | Internal error          | Internal JSON-RPC error.                                                                              |
-| -32700 | Parse error             | Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text. |
-
-> 📘 NOTE:
->
-> \-32600 is used for many errors about the authentication failed
->
-> `"inconsistent network case"`
->
-> `"no api key case"`
->
-> `"api key not found case"`
->
-> `"missing columns of JSON-RPC standard"`
->
-> \-32603 is used for several errors
->
-> `"fallback" `
->
-> `"internal error case"`
+| HTTP status code | Code   | Message          | Description            |
+| :--------------- | :----- | :--------------- | :--------------------- |
+| 400              | -32700 | Parse error      | Invalid JSON           |
+| 400              | -32600 | Invalid Request  | API key is empty       |
+| 401              | -32600 | Invalid Request  | Invalid API key        |
+| 402              | -32600 | Invalid Request  | Quota exceeded         |
+| 400              | -32600 | Invalid Request  | Network mismatch       |
+| 429              | -32600 | Invalid Request  | Rate limiting exceeded |
+| 200              | -32601 | Method not found | Method not found       |
+| 200              | -32602 | Invalid params   | Invalid params         |
+| 500              | -32603 | Internal error   | Internal error         |
+| 200              | -32000 | Server error     | Resource not found     |

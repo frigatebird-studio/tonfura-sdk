@@ -1,7 +1,4 @@
-import { AxiosResponse } from 'axios';
-
-import { JSON_RPC, Method } from '../constants';
-import { httpClient } from '../utils';
+import { Method } from '../constants';
 import { TonfuraConfig } from './TonfuraConfig';
 
 /**
@@ -13,13 +10,7 @@ import { TonfuraConfig } from './TonfuraConfig';
  */
 export class Transact {
   /** @internal */
-  private commonParams;
-  constructor(private readonly config: TonfuraConfig) {
-    this.commonParams = {
-      jsonrpc: JSON_RPC,
-      id: this.config.id
-    };
-  }
+  constructor(private readonly config: TonfuraConfig) {}
 
   /**
    * Send serialized boc file: fully packed and serialized external message to blockchain.
@@ -28,18 +19,11 @@ export class Transact {
    * @public
    */
   async sendBoc(boc: TonfuraSDK.Transact.SendBoc.Params['boc']) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Transact.SendBoc.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Transact.SendBoc.Response>,
-        TonfuraSDK.Transact.SendBoc.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Transact.SendBoc.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_SEND_BOC,
-      params: { boc }
-    });
+      TonfuraSDK.Transact.SendBoc.Response
+    >(Method.TON_SEND_BOC, { boc });
   }
 
   /**
@@ -51,41 +35,12 @@ export class Transact {
   async sendBocReturnHash(
     boc: TonfuraSDK.Transact.SendBocReturnHash.Params['boc']
   ) {
-    return httpClient.post<
+    const provider = await this.config.getProvider();
+    return provider.sendJsonRpcRequest<
       TonfuraSDK.Transact.SendBocReturnHash.Params,
-      AxiosResponse<
-        JSONRPC.Response<TonfuraSDK.Transact.SendBocReturnHash.Response>,
-        TonfuraSDK.Transact.SendBocReturnHash.Params
-      >,
-      JSONRPC.Request<TonfuraSDK.Transact.SendBocReturnHash.Params>
-    >(this.config.apiKey, {
-      ...this.commonParams,
-      method: Method.TON_SEND_BOC_RETURN_HASH,
-      params: { boc }
-    });
+      TonfuraSDK.Transact.SendBocReturnHash.Response
+    >(Method.TON_SEND_BOC_RETURN_HASH, { boc });
   }
 
-  /**
-   * Send query - unpacked external message.
-   * This method takes address, body and init-params (if any),
-   * packs it to external message and sends to network.
-   * All params should be boc-serialized.
-   *
-   * @param params The variable of the query.
-   * @public
-   */
-  // async sendQuery(params: TonfuraSDK.Transact.SendQuery.Params) {
-  //   return httpClient.post<
-  //     TonfuraSDK.Transact.SendQuery.Params,
-  //     AxiosResponse<
-  //       TonfuraSDK.Transact.SendQuery.Response,
-  //       TonfuraSDK.Transact.SendQuery.Params
-  //     >,
-  //     TonfuraSDK.Transact.Payload<TonfuraSDK.Transact.SendQuery.Params>
-  //   >(this.config.apiKey, {
-  //     ...this.commonParams,
-  //     method: Method.TON_SEND_QUERY,
-  //     params
-  //   });
-  // }
+  // TODO: Implement sendQuery
 }

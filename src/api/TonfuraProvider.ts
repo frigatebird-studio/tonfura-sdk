@@ -1,40 +1,50 @@
-import { DEFAULT_TONFURA_API_KEY } from '../constants';
+import axios, { AxiosResponse } from 'axios';
+
+import { Method, getTonfuraHttpUrl } from '../constants';
+import { JsonRpcRequest, JsonRpcResponse } from '../types/json-rpc-types';
 import { TonfuraConfig } from './TonfuraConfig';
 
 /**
  * SDK's custom implementation of 'TonfuraProvider'.
  *
  * Do not call this constructor directly. Instead, instantiate an instance of
- * {@link Tonfura} and call {@link Tonfura.config.getProvider()}.
+ * {@link Tonfura} and call {@link TonfuraSDK.config.getProvider()}.
  *
  * @public
  */
 export class TonfuraProvider {
-  readonly apiKey: string;
+  readonly baseUrl: string;
   readonly maxRetries: number;
 
   /** @internal */
   constructor(config: TonfuraConfig) {
-    this.apiKey = config.apiKey;
+    const apiKey = config.apiKey;
+
+    const network = config.network;
+
+    this.baseUrl = getTonfuraHttpUrl(network, apiKey);
+
+    if (config.url !== undefined) {
+      this.baseUrl = config.url;
+    }
+
     this.maxRetries = config.maxRetries;
-    // TODO: support individual headers when calling batch
   }
 
-  /**
-   * Returns the API key for an Tonfura provider.
-   *
-   * @internal
-   * @override
-   */
-  static getApiKey(apiKey: any): string {
-    if (apiKey === null) {
-      return DEFAULT_TONFURA_API_KEY;
-    }
-    if (apiKey && typeof apiKey !== 'string') {
-      throw new Error(
-        `Invalid apiKey '${apiKey}' provided. apiKey must be a string.`
-      );
-    }
-    return apiKey;
+  /** @internal */
+  sendJsonRpcRequest<JsonRpcRequestParams, JsonRpcResponseResult>(
+    method: Method,
+    params?: JsonRpcRequestParams
+  ): Promise<AxiosResponse<JsonRpcResponse<JsonRpcResponseResult>>> {
+    return axios.post<
+      JsonRpcResponse<JsonRpcResponseResult>,
+      AxiosResponse<JsonRpcResponse<JsonRpcResponseResult>>,
+      JsonRpcRequest<JsonRpcRequestParams>
+    >(this.baseUrl, {
+      jsonrpc: '2.0',
+      id: 0,
+      method,
+      params
+    });
   }
 }
