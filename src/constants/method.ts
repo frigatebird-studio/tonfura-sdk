@@ -1,5 +1,5 @@
 export enum Method {
-  // account
+  // accounts
   TON_GET_ADDRESS_INFO = 'ton_getAddressInformation',
   TON_GET_EXTENDEDADDRESSINFORMATION = 'ton_getExtendedAddressInformation',
   TON_GET_WALLET_INFORMATION = 'ton_getWalletInformation',
@@ -23,10 +23,11 @@ export enum Method {
   TON_TRYLOCATETX = 'ton_tryLocateTx',
   TON_TRYLOCATERESULTTX = 'ton_tryLocateResultTx',
   TON_TRYLOCATESOURCETX = 'ton_tryLocateSourceTx',
-  // other
+  // get config
   TON_GET_CONFIGPARAM = 'ton_getConfigParam',
+  // run method
   TON_RUN_GET_METHOD = 'ton_runGetMethod',
-  // send boc
+  // send
   TON_SEND_BOC = 'ton_sendBoc',
   TON_SEND_BOC_RETURN_HASH = 'ton_sendBocReturnHash',
   TON_ESTIMATEFEE = 'ton_estimateFee'

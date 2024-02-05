@@ -1,4 +1,3 @@
-import { httpClient } from '../utils';
 import { Core } from './Core';
 import { TonfuraConfig } from './TonfuraConfig';
 import { Transact } from './Transact';
@@ -14,7 +13,7 @@ import { Transact } from './Transact';
  */
 export class Tonfura {
   /**
-   * The `core` Tonfura's enhanced APIs.
+   * The `core` contains the core ton json-rpc calls.
    */
   readonly core: Core;
 
@@ -41,10 +40,6 @@ export class Tonfura {
    */
   constructor(settings?: TonfuraSDK.Settings) {
     this.config = new TonfuraConfig(settings);
-
-    if (settings?.url) {
-      httpClient.defaults.baseURL = settings.url;
-    }
 
     this.core = new Core(this.config);
     this.transact = new Transact(this.config);
