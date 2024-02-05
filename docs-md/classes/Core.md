@@ -9,10 +9,6 @@ with `const tonfura = new Tonfura(config)` and then access the Core via `tonfura
 
 ## Table of contents
 
-### Constructors
-
-- [constructor](Core.md#constructor)
-
 ### Methods
 
 - [detectAddress](Core.md#detectaddress)
@@ -40,27 +36,11 @@ with `const tonfura = new Tonfura(config)` and then access the Core via `tonfura
 - [tryLocateTx](Core.md#trylocatetx)
 - [unpackAddress](Core.md#unpackaddress)
 
-## Constructors
-
-### constructor
-
-• **new Core**(`config`)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `config` | [`TonfuraConfig`](TonfuraConfig.md) |
-
-#### Defined in
-
-[api/Core.ts:16](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L16)
-
 ## Methods
 
 ### detectAddress
 
-▸ **detectAddress**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnDetectAddress`\>, `Params`\>\>
+▸ **detectAddress**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnDetectAddress`\>, `any`\>\>
 
 Get all possible address forms.
 
@@ -72,17 +52,17 @@ Get all possible address forms.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnDetectAddress`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnDetectAddress`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:195](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L195)
+[api/Core.ts:137](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L137)
 
 ___
 
 ### estimateFee
 
-▸ **estimateFee**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnEstimatefee`\>, `Params`\>\>
+▸ **estimateFee**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnEstimatefee`\>, `any`\>\>
 
 Estimate fees required for query processing. body, init-code and init-data accepted in serialized format (b64-encoded).
 
@@ -94,17 +74,17 @@ Estimate fees required for query processing. body, init-code and init-data accep
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnEstimatefee`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnEstimatefee`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:533](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L533)
+[api/Core.ts:365](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L365)
 
 ___
 
 ### getAddressBalance
 
-▸ **getAddressBalance**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetAddressbalance`\>, `Params`\>\>
+▸ **getAddressBalance**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetAddressbalance`\>, `any`\>\>
 
 Get balance (in nanotons) of a given address.
 
@@ -116,17 +96,17 @@ Get balance (in nanotons) of a given address.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetAddressbalance`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetAddressbalance`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:105](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L105)
+[api/Core.ts:75](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L75)
 
 ___
 
 ### getAddressInformation
 
-▸ **getAddressInformation**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetAddressInfromation`\>, `Params`\>\>
+▸ **getAddressInformation**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetAddressInfromation`\>, `any`\>\>
 
 Returns the information of a given address.
 Information includes the balance, code, data and last_transaction_id
@@ -139,17 +119,17 @@ Information includes the balance, code, data and last_transaction_id
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetAddressInfromation`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetAddressInfromation`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:30](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L30)
+[api/Core.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L21)
 
 ___
 
 ### getAddressState
 
-▸ **getAddressState**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetAddressstate`\>, `Params`\>\>
+▸ **getAddressState**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetAddressstate`\>, `any`\>\>
 
 Get state of a given address. State can be either unitialized, active or frozen.
 
@@ -161,17 +141,17 @@ Get state of a given address. State can be either unitialized, active or frozen.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetAddressstate`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetAddressstate`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:128](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L128)
+[api/Core.ts:91](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L91)
 
 ___
 
 ### getBlockHeader
 
-▸ **getBlockHeader**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetBlockheader`\>, `Params`\>\>
+▸ **getBlockHeader**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetBlockheader`\>, `any`\>\>
 
 Get metadata of a given block.
 
@@ -183,17 +163,17 @@ Get metadata of a given block.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetBlockheader`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetBlockheader`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:363](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L363)
+[api/Core.ts:251](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L251)
 
 ___
 
 ### getBlockTransactions
 
-▸ **getBlockTransactions**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetBlockTransactions`\>, `Params`\>\>
+▸ **getBlockTransactions**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetBlockTransactions`\>, `any`\>\>
 
 Get transactions of the given block.
 
@@ -205,17 +185,17 @@ Get transactions of the given block.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetBlockTransactions`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetBlockTransactions`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:405](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L405)
+[api/Core.ts:279](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L279)
 
 ___
 
 ### getConfigParam
 
-▸ **getConfigParam**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetConfigparam`\>, `Params`\>\>
+▸ **getConfigParam**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetConfigparam`\>, `any`\>\>
 
 Get config by id.
 
@@ -227,33 +207,33 @@ Get config by id.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetConfigparam`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetConfigparam`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:491](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L491)
+[api/Core.ts:337](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L337)
 
 ___
 
 ### getConsensusBlock
 
-▸ **getConsensusBlock**(): `Promise`<`AxiosResponse`<`Response`<`ReturnConsensusblock`\>, `Params`\>\>
+▸ **getConsensusBlock**(): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnConsensusblock`\>, `any`\>\>
 
 Get consensus block and its update timestamp.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnConsensusblock`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnConsensusblock`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:301](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L301)
+[api/Core.ts:209](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L209)
 
 ___
 
 ### getExtendedAddressInformation
 
-▸ **getExtendedAddressInformation**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetExtendedaddressinformation`\>, `Params`\>\>
+▸ **getExtendedAddressInformation**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetExtendedaddressinformation`\>, `any`\>\>
 
 Returns more information of a given address.
 Information not only includes the balance, code, data and last_transaction_id,
@@ -269,17 +249,17 @@ For detecting wallets we recommend to use getWalletInformation.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetExtendedaddressinformation`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetExtendedaddressinformation`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:57](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L57)
+[api/Core.ts:41](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L41)
 
 ___
 
 ### getMasterchainBlockSignatures
 
-▸ **getMasterchainBlockSignatures**(`seqno`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetMasterchainblocksignatures`\>, `Params`\>\>
+▸ **getMasterchainBlockSignatures**(`seqno`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetMasterchainblocksignatures`\>, `any`\>\>
 
 Get up-to-date masterchain state.
 
@@ -291,33 +271,33 @@ Get up-to-date masterchain state.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetMasterchainblocksignatures`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetMasterchainblocksignatures`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:258](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L258)
+[api/Core.ts:180](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L180)
 
 ___
 
 ### getMasterchainInfo
 
-▸ **getMasterchainInfo**(): `Promise`<`AxiosResponse`<`Response`<`ReturnGetMasterchaininfo`\>, `Params`\>\>
+▸ **getMasterchainInfo**(): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetMasterchaininfo`\>, `any`\>\>
 
 Get up-to-date masterchain state.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetMasterchaininfo`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetMasterchaininfo`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:238](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L238)
+[api/Core.ts:166](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L166)
 
 ___
 
 ### getShardBlockProof
 
-▸ **getShardBlockProof**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetShardblockproof`\>, `Params`\>\>
+▸ **getShardBlockProof**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetShardblockproof`\>, `any`\>\>
 
 Get merkle proof of shardchain block.
 
@@ -329,17 +309,17 @@ Get merkle proof of shardchain block.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetShardblockproof`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetShardblockproof`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:281](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L281)
+[api/Core.ts:196](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L196)
 
 ___
 
 ### getTokenData
 
-▸ **getTokenData**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetTokenData`\>, `Params`\>\>
+▸ **getTokenData**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetTokenData`\>, `any`\>\>
 
 Get NFT or Jetton information.
 
@@ -351,17 +331,17 @@ Get NFT or Jetton information.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetTokenData`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetTokenData`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:218](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L218)
+[api/Core.ts:153](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L153)
 
 ___
 
 ### getTransactions
 
-▸ **getTransactions**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetTransactions`\>, `Params`\>\>
+▸ **getTransactions**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetTransactions`\>, `any`\>\>
 
 Get transaction history of a given address.
 
@@ -373,17 +353,17 @@ Get transaction history of a given address.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetTransactions`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetTransactions`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:384](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L384)
+[api/Core.ts:265](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L265)
 
 ___
 
 ### getWalletInformation
 
-▸ **getWalletInformation**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnGetWalletinformation`\>, `Params`\>\>
+▸ **getWalletInformation**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetWalletinformation`\>, `any`\>\>
 
 Retrieve wallet information.
 This method parses contract state and
@@ -397,17 +377,17 @@ currently supports more wallet types than getExtendedAddressInformation: simple 
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnGetWalletinformation`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnGetWalletinformation`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:82](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L82)
+[api/Core.ts:59](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L59)
 
 ___
 
 ### lookupBlock
 
-▸ **lookupBlock**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnLookupBlock`\>, `Params`\>\>
+▸ **lookupBlock**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnLookupBlock`\>, `any`\>\>
 
 Look up block by either seqno, lt or unixtime.
 
@@ -419,17 +399,17 @@ Look up block by either seqno, lt or unixtime.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnLookupBlock`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnLookupBlock`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:321](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L321)
+[api/Core.ts:223](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L223)
 
 ___
 
 ### packAddress
 
-▸ **packAddress**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnPackAddress`\>, `Params`\>\>
+▸ **packAddress**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnPackAddress`\>, `any`\>\>
 
 Convert an address from raw to human-readable format.
 
@@ -441,17 +421,17 @@ Convert an address from raw to human-readable format.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnPackAddress`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnPackAddress`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:151](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L151)
+[api/Core.ts:107](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L107)
 
 ___
 
 ### runGetMethod
 
-▸ **runGetMethod**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnCall`\>, `Params`\>\>
+▸ **runGetMethod**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnCall`\>, `any`\>\>
 
 Run get method on smart contract.
 
@@ -463,17 +443,17 @@ Run get method on smart contract.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnCall`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnCall`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:512](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L512)
+[api/Core.ts:351](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L351)
 
 ___
 
 ### shards
 
-▸ **shards**(`seqno`): `Promise`<`AxiosResponse`<`Response`<`ReturnShard`\>, `Params`\>\>
+▸ **shards**(`seqno`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnShard`\>, `any`\>\>
 
 Get shards information.
 
@@ -485,17 +465,17 @@ Get shards information.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnShard`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnShard`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:342](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L342)
+[api/Core.ts:237](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L237)
 
 ___
 
 ### tryLocateResultTx
 
-▸ **tryLocateResultTx**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnTrylocateresulttx`\>, `Params`\>\>
+▸ **tryLocateResultTx**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnTrylocateresulttx`\>, `any`\>\>
 
 Locate outcoming transaction of destination address by incoming message
 
@@ -507,17 +487,17 @@ Locate outcoming transaction of destination address by incoming message
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnTrylocateresulttx`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnTrylocateresulttx`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:449](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L449)
+[api/Core.ts:309](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L309)
 
 ___
 
 ### tryLocateSourceTx
 
-▸ **tryLocateSourceTx**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnTrylocatesourcetx`\>, `Params`\>\>
+▸ **tryLocateSourceTx**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnTrylocatesourcetx`\>, `any`\>\>
 
 Locate incoming transaction of source address by outcoming message.
 
@@ -529,17 +509,17 @@ Locate incoming transaction of source address by outcoming message.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnTrylocatesourcetx`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnTrylocatesourcetx`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:470](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L470)
+[api/Core.ts:323](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L323)
 
 ___
 
 ### tryLocateTx
 
-▸ **tryLocateTx**(`params`): `Promise`<`AxiosResponse`<`Response`<`ReturnTrylocatetx`\>, `Params`\>\>
+▸ **tryLocateTx**(`params`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnTrylocatetx`\>, `any`\>\>
 
 Locate outcoming transaction of destination address by incoming message.
 
@@ -551,17 +531,17 @@ Locate outcoming transaction of destination address by incoming message.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnTrylocatetx`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnTrylocatetx`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:428](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L428)
+[api/Core.ts:295](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L295)
 
 ___
 
 ### unpackAddress
 
-▸ **unpackAddress**(`address`): `Promise`<`AxiosResponse`<`Response`<`ReturnUnpackAddress`\>, `Params`\>\>
+▸ **unpackAddress**(`address`): `Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnUnpackAddress`\>, `any`\>\>
 
 Convert an address from human-readable to raw format.
 
@@ -573,8 +553,8 @@ Convert an address from human-readable to raw format.
 
 #### Returns
 
-`Promise`<`AxiosResponse`<`Response`<`ReturnUnpackAddress`\>, `Params`\>\>
+`Promise`<`AxiosResponse`<`JsonRpcResponse`<`ReturnUnpackAddress`\>, `any`\>\>
 
 #### Defined in
 
-[api/Core.ts:172](https://github.com/frigatebird-studio/tonfura-sdk/blob/d0deefd/src/api/Core.ts#L172)
+[api/Core.ts:121](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L121)

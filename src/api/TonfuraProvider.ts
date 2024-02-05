@@ -8,7 +8,7 @@ import { TonfuraConfig } from './TonfuraConfig';
  * SDK's custom implementation of 'TonfuraProvider'.
  *
  * Do not call this constructor directly. Instead, instantiate an instance of
- * {@link Tonfura} and call {@link Tonfura.config.getProvider()}.
+ * {@link Tonfura} and call {@link TonfuraSDK.config.getProvider()}.
  *
  * @public
  */
@@ -23,6 +23,10 @@ export class TonfuraProvider {
     const network = config.network;
 
     this.baseUrl = getTonfuraHttpUrl(network, apiKey);
+
+    if (config.url !== undefined) {
+      this.baseUrl = config.url;
+    }
 
     this.maxRetries = config.maxRetries;
   }

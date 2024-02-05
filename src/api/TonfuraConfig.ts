@@ -46,12 +46,8 @@ export class TonfuraConfig {
    * Returns an TonfuraProvider instance. Only one provider is created per
    * Tonfura instance.
    *
-   * The TonfuraProvider is a wrapper around `TonfuraProvider` class and
-   * has been expanded to support Tonfura's Enhanced APIs.
-   *
-   * Most common methods on the provider are available as top-level methods on
-   * the {@link Tonfura} instance, but the provider is exposed here to access
-   * other less-common methods.
+   * The TonfuraProvider is a wrapper around `axios` class and
+   * has been expanded to support Tonfura's APIs.
    *
    * @public
    */
