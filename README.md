@@ -11,7 +11,7 @@ The SDK leverages Tonfura's hardened node infrastructure, guaranteeing best-in-c
 - [Tonfura Settings](#tonfura-settings)
 - [Tonfura Core](#tonfura-core)
 - [Tonfura Transact](#tonfura-transact)
-- [Exception Handle](#exception-handle)
+- [Error Handling](#error-handling)
 
 <a name="getting-started"></a>
 
@@ -61,7 +61,7 @@ An `TonfuraSettings` object can be passed on instantiation to the Tonfura object
 
 ## Tonfura Core
 
-The `Core` contains all commonly-used [toncenter](https://toncenter.com/api/v2/#/accounts) methods.
+The `Core` contains all commonly-used ton's methods.
 
 > [Check out more methods](https://github.com/frigatebird-studio/tonfura-sdk/blob/main/docs-md/classes/Core.md#methods)
 
@@ -73,7 +73,7 @@ The `Transact` contains methods used for simulating and sending transactions.
 
 > [Check out more methods](https://github.com/frigatebird-studio/tonfura-sdk/blob/main/docs-md/classes/Transact.md#methods)
 
-<a name="exception-handle"></a>
+<a name="error-handling"></a>
 
 ## Error Handling
 

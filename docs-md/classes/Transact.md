@@ -35,7 +35,7 @@ Send serialized boc file: fully packed and serialized external message to blockc
 
 #### Defined in
 
-[api/Transact.ts:22](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Transact.ts#L22)
+[api/Transact.ts:22](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/api/Transact.ts#L22)
 
 ___
 
@@ -57,4 +57,4 @@ Send serialized boc file: fully packed and serialized external message to blockc
 
 #### Defined in
 
-[api/Transact.ts:36](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Transact.ts#L36)
+[api/Transact.ts:36](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/api/Transact.ts#L36)
