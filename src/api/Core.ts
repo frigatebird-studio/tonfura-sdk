@@ -3,7 +3,7 @@ import * as TonTypes from '../types/ton-types';
 import { TonfuraConfig } from './TonfuraConfig';
 
 /**
- * The Core contains all commonly-used methods.
+ * The Core contains all commonly-used ton's methods.
  *
  * Do not call this constructor directly. Instead, instantiate an Tonfura object
  * with `const tonfura = new Tonfura(config)` and then access the Core via `tonfura.core`.

@@ -30,11 +30,11 @@ different network or API key, create a new instance of [Tonfura](Tonfura.md).
 
 | Name | Type |
 | :------ | :------ |
-| `settings?` | `Settings` |
+| `settings?` | `TonfuraSettings` |
 
 #### Defined in
 
-[api/Tonfura.ts:41](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Tonfura.ts#L41)
+[api/Tonfura.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/api/Tonfura.ts#L42)
 
 ## Properties
 
@@ -47,7 +47,7 @@ and allows access to the underlying providers.
 
 #### Defined in
 
-[api/Tonfura.ts:30](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Tonfura.ts#L30)
+[api/Tonfura.ts:31](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/api/Tonfura.ts#L31)
 
 ___
 
@@ -59,7 +59,7 @@ The `core` contains the core ton json-rpc calls.
 
 #### Defined in
 
-[api/Tonfura.ts:18](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Tonfura.ts#L18)
+[api/Tonfura.ts:19](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/api/Tonfura.ts#L19)
 
 ___
 
@@ -72,4 +72,4 @@ checking on the state of submitted transasctions.
 
 #### Defined in
 
-[api/Tonfura.ts:24](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Tonfura.ts#L24)
+[api/Tonfura.ts:25](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/api/Tonfura.ts#L25)
