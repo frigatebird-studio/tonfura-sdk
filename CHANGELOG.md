@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.1.2...v1.2.0) (2024-02-06)
+
+
+### Features
+
+* expose params and result of each API method ([#8](https://github.com/frigatebird-studio/tonfura-sdk/issues/8)) ([62cf875](https://github.com/frigatebird-studio/tonfura-sdk/commit/62cf8755288e13a48ddc5991cf3c54755b5f4ab9))
+
 ## [1.1.2](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.1.1...v1.1.2) (2024-01-10)
 
 
