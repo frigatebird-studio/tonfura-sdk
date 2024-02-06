@@ -1,3 +1,4 @@
+import { TonfuraSettings } from '../types/types';
 import { Core } from './Core';
 import { TonfuraConfig } from './TonfuraConfig';
 import { Transact } from './Transact';
@@ -38,7 +39,7 @@ export class Tonfura {
    * @param {number} [settings.requestTimeout] - The timeout after which request should fail
    * @public
    */
-  constructor(settings?: TonfuraSDK.Settings) {
+  constructor(settings?: TonfuraSettings) {
     this.config = new TonfuraConfig(settings);
 
     this.core = new Core(this.config);
