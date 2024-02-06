@@ -4,6 +4,7 @@ import {
   DEFAULT_TONFURA_API_KEY,
   Network
 } from '../constants';
+import { TonfuraSettings } from '../types/types';
 import type { TonfuraProvider } from './TonfuraProvider';
 
 /**
@@ -35,7 +36,7 @@ export class TonfuraConfig {
    */
   private _baseTonfuraProvider: Promise<TonfuraProvider> | undefined;
 
-  constructor(config?: TonfuraSDK.Settings) {
+  constructor(config?: TonfuraSettings) {
     this.apiKey = config?.apiKey || DEFAULT_TONFURA_API_KEY;
     this.network = config?.network || DEFAULT_NETWORK;
     this.maxRetries = config?.maxRetries || DEFAULT_MAX_RETRIES;

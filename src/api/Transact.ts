@@ -1,4 +1,5 @@
 import { Method } from '../constants';
+import * as TonTypes from '../types/ton-types';
 import { TonfuraConfig } from './TonfuraConfig';
 
 /**
@@ -18,11 +19,11 @@ export class Transact {
    * @param boc
    * @public
    */
-  async sendBoc(boc: TonfuraSDK.Transact.SendBoc.Params['boc']) {
+  async sendBoc(boc: TonTypes.SendBocParams['boc']) {
     const provider = await this.config.getProvider();
     return provider.sendJsonRpcRequest<
-      TonfuraSDK.Transact.SendBoc.Params,
-      TonfuraSDK.Transact.SendBoc.Response
+      TonTypes.SendBocParams,
+      TonTypes.SendBocResult
     >(Method.TON_SEND_BOC, { boc });
   }
 
@@ -32,13 +33,11 @@ export class Transact {
    * @param boc
    * @public
    */
-  async sendBocReturnHash(
-    boc: TonfuraSDK.Transact.SendBocReturnHash.Params['boc']
-  ) {
+  async sendBocReturnHash(boc: TonTypes.SendBocReturnHashParams['boc']) {
     const provider = await this.config.getProvider();
     return provider.sendJsonRpcRequest<
-      TonfuraSDK.Transact.SendBocReturnHash.Params,
-      TonfuraSDK.Transact.SendBocReturnHash.Response
+      TonTypes.SendBocReturnHashParams,
+      TonTypes.SendBocReturnHashResult
     >(Method.TON_SEND_BOC_RETURN_HASH, { boc });
   }
 
