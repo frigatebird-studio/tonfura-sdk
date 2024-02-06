@@ -56,7 +56,7 @@ Get all possible address forms.
 
 #### Defined in
 
-[api/Core.ts:137](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L137)
+[api/Core.ts:134](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L134)
 
 ___
 
@@ -70,7 +70,7 @@ Estimate fees required for query processing. body, init-code and init-data accep
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the block. |
+| `params` | `EstimatefeeParams` | The variable of the block. |
 
 #### Returns
 
@@ -78,7 +78,7 @@ Estimate fees required for query processing. body, init-code and init-data accep
 
 #### Defined in
 
-[api/Core.ts:365](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L365)
+[api/Core.ts:358](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L358)
 
 ___
 
@@ -100,7 +100,7 @@ Get balance (in nanotons) of a given address.
 
 #### Defined in
 
-[api/Core.ts:75](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L75)
+[api/Core.ts:76](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L76)
 
 ___
 
@@ -123,7 +123,7 @@ Information includes the balance, code, data and last_transaction_id
 
 #### Defined in
 
-[api/Core.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L21)
+[api/Core.ts:22](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L22)
 
 ___
 
@@ -145,7 +145,7 @@ Get state of a given address. State can be either unitialized, active or frozen.
 
 #### Defined in
 
-[api/Core.ts:91](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L91)
+[api/Core.ts:92](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L92)
 
 ___
 
@@ -159,7 +159,7 @@ Get metadata of a given block.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the block. |
+| `params` | `GetBlockHeaderParams` | The variable of the block. |
 
 #### Returns
 
@@ -167,7 +167,7 @@ Get metadata of a given block.
 
 #### Defined in
 
-[api/Core.ts:251](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L251)
+[api/Core.ts:246](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L246)
 
 ___
 
@@ -181,7 +181,7 @@ Get transactions of the given block.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the block. |
+| `params` | `GetBlockTransactionsParams` | The variable of the block. |
 
 #### Returns
 
@@ -189,7 +189,7 @@ Get transactions of the given block.
 
 #### Defined in
 
-[api/Core.ts:279](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L279)
+[api/Core.ts:274](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L274)
 
 ___
 
@@ -203,7 +203,7 @@ Get config by id.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the config. |
+| `params` | `GetConfigParamParams` | The variable of the config. |
 
 #### Returns
 
@@ -211,7 +211,7 @@ Get config by id.
 
 #### Defined in
 
-[api/Core.ts:337](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L337)
+[api/Core.ts:330](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L330)
 
 ___
 
@@ -227,7 +227,7 @@ Get consensus block and its update timestamp.
 
 #### Defined in
 
-[api/Core.ts:209](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L209)
+[api/Core.ts:204](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L204)
 
 ___
 
@@ -253,7 +253,7 @@ For detecting wallets we recommend to use getWalletInformation.
 
 #### Defined in
 
-[api/Core.ts:41](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L41)
+[api/Core.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L42)
 
 ___
 
@@ -275,7 +275,7 @@ Get up-to-date masterchain state.
 
 #### Defined in
 
-[api/Core.ts:180](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L180)
+[api/Core.ts:175](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L175)
 
 ___
 
@@ -291,7 +291,7 @@ Get up-to-date masterchain state.
 
 #### Defined in
 
-[api/Core.ts:166](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L166)
+[api/Core.ts:161](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L161)
 
 ___
 
@@ -305,7 +305,7 @@ Get merkle proof of shardchain block.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the shardchain block. |
+| `params` | `GetShardBlockProofParams` | The variable of the shardchain block. |
 
 #### Returns
 
@@ -313,7 +313,7 @@ Get merkle proof of shardchain block.
 
 #### Defined in
 
-[api/Core.ts:196](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L196)
+[api/Core.ts:191](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L191)
 
 ___
 
@@ -335,7 +335,7 @@ Get NFT or Jetton information.
 
 #### Defined in
 
-[api/Core.ts:153](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L153)
+[api/Core.ts:148](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L148)
 
 ___
 
@@ -349,7 +349,7 @@ Get transaction history of a given address.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the transactions. |
+| `params` | `GetTransactionsParams` | The variable of the transactions. |
 
 #### Returns
 
@@ -357,7 +357,7 @@ Get transaction history of a given address.
 
 #### Defined in
 
-[api/Core.ts:265](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L265)
+[api/Core.ts:260](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L260)
 
 ___
 
@@ -381,7 +381,7 @@ currently supports more wallet types than getExtendedAddressInformation: simple 
 
 #### Defined in
 
-[api/Core.ts:59](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L59)
+[api/Core.ts:60](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L60)
 
 ___
 
@@ -395,7 +395,7 @@ Look up block by either seqno, lt or unixtime.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the block. |
+| `params` | `LookupBlockParams` | The variable of the block. |
 
 #### Returns
 
@@ -403,7 +403,7 @@ Look up block by either seqno, lt or unixtime.
 
 #### Defined in
 
-[api/Core.ts:223](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L223)
+[api/Core.ts:218](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L218)
 
 ___
 
@@ -425,7 +425,7 @@ Convert an address from raw to human-readable format.
 
 #### Defined in
 
-[api/Core.ts:107](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L107)
+[api/Core.ts:106](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L106)
 
 ___
 
@@ -439,7 +439,7 @@ Run get method on smart contract.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the block. |
+| `params` | `RunGetMethodParams` | The variable of the block. |
 
 #### Returns
 
@@ -447,7 +447,7 @@ Run get method on smart contract.
 
 #### Defined in
 
-[api/Core.ts:351](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L351)
+[api/Core.ts:344](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L344)
 
 ___
 
@@ -469,7 +469,7 @@ Get shards information.
 
 #### Defined in
 
-[api/Core.ts:237](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L237)
+[api/Core.ts:232](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L232)
 
 ___
 
@@ -483,7 +483,7 @@ Locate outcoming transaction of destination address by incoming message
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the transactions. |
+| `params` | `TryLocateResultTxParams` | The variable of the transactions. |
 
 #### Returns
 
@@ -491,7 +491,7 @@ Locate outcoming transaction of destination address by incoming message
 
 #### Defined in
 
-[api/Core.ts:309](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L309)
+[api/Core.ts:302](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L302)
 
 ___
 
@@ -505,7 +505,7 @@ Locate incoming transaction of source address by outcoming message.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the transactions. |
+| `params` | `TryLocateSourceTxParams` | The variable of the transactions. |
 
 #### Returns
 
@@ -513,7 +513,7 @@ Locate incoming transaction of source address by outcoming message.
 
 #### Defined in
 
-[api/Core.ts:323](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L323)
+[api/Core.ts:316](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L316)
 
 ___
 
@@ -527,7 +527,7 @@ Locate outcoming transaction of destination address by incoming message.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `Params` | The variable of the transactions. |
+| `params` | `TryLocateTxParams` | The variable of the transactions. |
 
 #### Returns
 
@@ -535,7 +535,7 @@ Locate outcoming transaction of destination address by incoming message.
 
 #### Defined in
 
-[api/Core.ts:295](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L295)
+[api/Core.ts:288](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L288)
 
 ___
 
@@ -557,4 +557,4 @@ Convert an address from human-readable to raw format.
 
 #### Defined in
 
-[api/Core.ts:121](https://github.com/frigatebird-studio/tonfura-sdk/blob/bf9e768/src/api/Core.ts#L121)
+[api/Core.ts:120](https://github.com/frigatebird-studio/tonfura-sdk/blob/b4cabeb/src/api/Core.ts#L120)
