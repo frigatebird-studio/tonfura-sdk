@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[constants/settings.ts:2](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/constants/settings.ts#L2)
+[constants/settings.ts:2](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/constants/settings.ts#L2)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[constants/settings.ts:3](https://github.com/frigatebird-studio/tonfura-sdk/blob/b7fe1b0/src/constants/settings.ts#L3)
+[constants/settings.ts:3](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/constants/settings.ts#L3)
