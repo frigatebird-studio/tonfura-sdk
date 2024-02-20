@@ -12,6 +12,6 @@ export const DEFAULT_MAX_RETRIES = 5;
  *
  * @internal
  */
-export function getTonfuraHttpUrl(_network: Network, apiKey: string): string {
-  return `https://api.tonfura.com/v1/json-rpc/${apiKey}`;
+export function getTonfuraHttpUrl(network: Network, apiKey: string): string {
+  return `https://${network}-rpc.tonfura.com/v1/json-rpc/${apiKey}`;
 }

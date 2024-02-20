@@ -8,7 +8,7 @@ import { TonfuraConfig } from './TonfuraConfig';
  * SDK's custom implementation of 'TonfuraProvider'.
  *
  * Do not call this constructor directly. Instead, instantiate an instance of
- * {@link Tonfura} and call {@link TonfuraSDK.config.getProvider()}.
+ * {@link Tonfura} and call {@link Tonfura.config.getProvider()}.
  *
  * @public
  */
