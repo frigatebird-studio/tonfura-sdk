@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.3.0...v1.3.1) (2024-04-08)
+
+
+### Bug Fixes
+
+* get transactions types ([#12](https://github.com/frigatebird-studio/tonfura-sdk/issues/12)) ([c6f6b4b](https://github.com/frigatebird-studio/tonfura-sdk/commit/c6f6b4b6d7ec9282df46423325cf1be37157331b))
+
 # [1.3.0](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.2.0...v1.3.0) (2024-02-20)
 
 
