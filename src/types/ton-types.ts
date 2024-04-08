@@ -122,11 +122,11 @@ export type GetTransactionsParams = {
   lt?: number;
   hash?: string;
   to_lt?: number;
-  archival: boolean;
+  archival?: boolean;
 };
 
 export type GetTransactionsResult =
-  import('./output/ton_getTransactions').ReturnGetTransactions;
+  import('./output/ton_getTransactions').ReturnGetTransactions[];
 
 export type GetBlockTransactionsParams = {
   workchain: number;
