@@ -1,7 +1,20 @@
 {
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "baseUrl": ".",
+    "compilerOptions": {
+      "module": "CommonJS"
+    },
+    "esModuleInterop": true,
+    "paths": {
+      "~/*": ["./*"]
+    }
+  },
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": true,
     "outDir": "dist",
+    "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
@@ -11,16 +24,19 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "stripInternal": true,
     "esModuleInterop": true,
     "sourceMap": true,
     "target": "es6",
-    "module": "esnext",
+    "module": "ESNext",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["node_modules/@types"]
+    "types": ["vitest/globals"],
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": ["dist/**/*", "node_modules/**/*"]
