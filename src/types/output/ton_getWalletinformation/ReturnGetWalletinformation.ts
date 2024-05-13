@@ -3,8 +3,8 @@ import {
   IsString,
   IsInt,
   ValidateNested,
-  ValidateIf,
   Validate,
+  IsOptional,
 } from 'class-validator';
 import {Expose, Type} from 'class-transformer';
 import {IsNumberOrString} from '../custom';
@@ -38,13 +38,13 @@ export class ReturnGetWalletinformation {
 
   @Expose()
   @IsString()
-  @ValidateIf(v => v.wallet_type !== undefined)
-  wallet_type: string;
+  @IsOptional()
+  wallet_type?: string;
 
   @Expose()
-  @ValidateIf(v => v.seqno !== undefined)
+  @IsOptional()
   @IsInt()
-  seqno: number;
+  seqno?: number;
 
   @Expose()
   @ValidateNested()
@@ -53,6 +53,6 @@ export class ReturnGetWalletinformation {
 
   @Expose()
   @IsInt()
-  @ValidateIf(v => v.wallet_id !== undefined)
-  wallet_id: number;
+  @IsOptional()
+  wallet_id?: number;
 }
