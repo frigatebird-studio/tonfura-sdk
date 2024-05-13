@@ -1,4 +1,8 @@
-[tonfura-sdk](../README.md) / [Exports](../modules.md) / Tonfura
+[**tonfura-sdk**](../README.md) • **Docs**
+
+***
+
+[tonfura-sdk](../globals.md) / Tonfura
 
 # Class: Tonfura
 
@@ -8,68 +12,58 @@ APIs and separates functionality into different namespaces.
 Each SDK instance is associated with a specific network and API key. To use a
 different network or API key, create a new instance of [Tonfura](Tonfura.md).
 
-## Table of contents
-
-### Constructors
-
-- [constructor](Tonfura.md#constructor)
-
-### Properties
-
-- [config](Tonfura.md#config)
-- [core](Tonfura.md#core)
-- [transact](Tonfura.md#transact)
-
 ## Constructors
 
-### constructor
+### new Tonfura()
 
-• **new Tonfura**(`settings?`)
+> **new Tonfura**(`settings`?): [`Tonfura`](Tonfura.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `settings?` | `TonfuraSettings` |
+• **settings?**: `TonfuraSettings`
 
-#### Defined in
+#### Returns
 
-[api/Tonfura.ts:42](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/Tonfura.ts#L42)
+[`Tonfura`](Tonfura.md)
+
+#### Source
+
+[api/Tonfura.ts:43](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/Tonfura.ts#L43)
 
 ## Properties
 
 ### config
 
-• `Readonly` **config**: [`TonfuraConfig`](TonfuraConfig.md)
+> `readonly` **config**: [`TonfuraConfig`](TonfuraConfig.md)
 
 Holds the setting information for the instance of the Tonfura SDK client
 and allows access to the underlying providers.
 
-#### Defined in
+#### Source
 
-[api/Tonfura.ts:31](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/Tonfura.ts#L31)
+[api/Tonfura.ts:29](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/Tonfura.ts#L29)
 
-___
+***
 
 ### core
 
-• `Readonly` **core**: [`Core`](Core.md)
+> `readonly` **core**: [`Core`](Core.md)
 
 The `core` contains the core ton json-rpc calls.
 
-#### Defined in
+#### Source
 
-[api/Tonfura.ts:19](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/Tonfura.ts#L19)
+[api/Tonfura.ts:17](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/Tonfura.ts#L17)
 
-___
+***
 
 ### transact
 
-• `Readonly` **transact**: [`Transact`](Transact.md)
+> `readonly` **transact**: [`Transact`](Transact.md)
 
-The `transact` contains methods for sending transactions and
-checking on the state of submitted transasctions.
+The `transact` contains methods for sending transactions and checking on
+the state of submitted transasctions.
 
-#### Defined in
+#### Source
 
-[api/Tonfura.ts:25](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/Tonfura.ts#L25)
+[api/Tonfura.ts:23](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/Tonfura.ts#L23)

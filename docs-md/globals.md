@@ -1,14 +1,14 @@
-[tonfura-sdk](README.md) / Exports
+[**tonfura-sdk**](README.md) • **Docs**
+
+***
 
 # tonfura-sdk
 
-## Table of contents
+## Enumerations
 
-### Enumerations
+- [Network](enumerations/Network.md)
 
-- [Network](enums/Network.md)
-
-### Classes
+## Classes
 
 - [Core](classes/Core.md)
 - [Tonfura](classes/Tonfura.md)

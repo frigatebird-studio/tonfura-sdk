@@ -1,4 +1,6 @@
-tonfura-sdk / [Exports](modules.md)
+**tonfura-sdk** • [**Docs**](globals.md)
+
+***
 
 # Tonfura SDK
 
