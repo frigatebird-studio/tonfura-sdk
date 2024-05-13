@@ -1,4 +1,4 @@
-export enum Method {
+export enum MethodV1 {
   // accounts
   TON_GET_ADDRESS_INFO = 'ton_getAddressInformation',
   TON_GET_EXTENDEDADDRESSINFORMATION = 'ton_getExtendedAddressInformation',
@@ -31,4 +31,12 @@ export enum Method {
   TON_SEND_BOC = 'ton_sendBoc',
   TON_SEND_BOC_RETURN_HASH = 'ton_sendBocReturnHash',
   TON_ESTIMATEFEE = 'ton_estimateFee'
+}
+
+export enum MethodV2 {
+  TON_JETTON_MASTERS = 'ton_jetton_masters',
+  TON_JETTON_WALLETS = 'ton_jetton_wallets',
+  TON_JETTON_TRANSFERS = 'ton_jetton_transfers',
+  TON_JETTON_BURNS = 'ton_jetton_burns',
+  TON_NFT_ITEMS = 'ton_nft_items'
 }

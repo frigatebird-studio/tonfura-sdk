@@ -13,14 +13,12 @@ import { Transact } from './Transact';
  * @public
  */
 export class Tonfura {
-  /**
-   * The `core` contains the core ton json-rpc calls.
-   */
+  /** The `core` contains the core ton json-rpc calls. */
   readonly core: Core;
 
   /**
-   * The `transact` contains methods for sending transactions and
-   * checking on the state of submitted transasctions.
+   * The `transact` contains methods for sending transactions and checking on
+   * the state of submitted transasctions.
    */
   readonly transact: Transact;
 
@@ -34,14 +32,16 @@ export class Tonfura {
    * @param {string} [settings.id] - The id to use for Tonfura
    * @param {string} [settings.apiKey] - The API key to use for Tonfura
    * @param {Network} [settings.network] - The network to use for Tonfura
-   * @param {url} [settings.url] - Optional URL endpoint to use for all requests.
-   * @param {number} [settings.maxRetries] - The maximum number of retries to attempt
-   * @param {number} [settings.requestTimeout] - The timeout after which request should fail
+   * @param {url} [settings.url] - Optional URL endpoint to use for all
+   *   requests.
+   * @param {number} [settings.maxRetries] - The maximum number of retries to
+   *   attempt
+   * @param {number} [settings.requestTimeout] - The timeout after which request
+   *   should fail
    * @public
    */
   constructor(settings?: TonfuraSettings) {
     this.config = new TonfuraConfig(settings);
-
     this.core = new Core(this.config);
     this.transact = new Transact(this.config);
   }

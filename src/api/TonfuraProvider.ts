@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-import { Method, getTonfuraHttpUrl } from '../constants';
+import { MethodV1, MethodV2, Version } from '../constants';
 import { JsonRpcRequest, JsonRpcResponse } from '../types/json-rpc-types';
 import { TonfuraConfig } from './TonfuraConfig';
 
@@ -13,34 +13,33 @@ import { TonfuraConfig } from './TonfuraConfig';
  * @public
  */
 export class TonfuraProvider {
+  readonly apiKey: string;
   readonly baseUrl: string;
   readonly maxRetries: number;
 
   /** @internal */
   constructor(config: TonfuraConfig) {
-    const apiKey = config.apiKey;
+    this.apiKey = config.apiKey;
 
     const network = config.network;
 
-    this.baseUrl = getTonfuraHttpUrl(network, apiKey);
-
-    if (config.url !== undefined) {
-      this.baseUrl = config.url;
-    }
+    this.baseUrl = config.url || `https://${network}-rpc.tonfura.com`;
 
     this.maxRetries = config.maxRetries;
   }
 
   /** @internal */
   sendJsonRpcRequest<JsonRpcRequestParams, JsonRpcResponseResult>(
-    method: Method,
-    params?: JsonRpcRequestParams
+    method: MethodV1 | MethodV2,
+    params?: JsonRpcRequestParams,
+    version: Version = 'v1'
   ): Promise<AxiosResponse<JsonRpcResponse<JsonRpcResponseResult>>> {
+    const url = `${this.baseUrl}/${version}/json-rpc/${this.apiKey}`;
     return axios.post<
       JsonRpcResponse<JsonRpcResponseResult>,
       AxiosResponse<JsonRpcResponse<JsonRpcResponseResult>>,
       JsonRpcRequest<JsonRpcRequestParams>
-    >(this.baseUrl, {
+    >(url, {
       jsonrpc: '2.0',
       id: 0,
       method,

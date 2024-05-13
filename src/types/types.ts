@@ -1,8 +1,5 @@
 export interface TonfuraSettings {
-  /**
-   * The Tonfura id that can be found in the Tonfura dashboard.
-   *
-   */
+  /** The Tonfura id that can be found in the Tonfura dashboard. */
   id?: number;
 
   /**

@@ -1,2 +1,1 @@
-export * from './GetAddressbalancePayload';
-export * from './ReturnGetAddressbalance';
+export * from './ReturnGetAddressBalance';
