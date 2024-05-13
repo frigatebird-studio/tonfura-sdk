@@ -15,7 +15,7 @@ describe('Tonfura class', () => {
     expect(tonfura.config.url).toBeUndefined();
   });
 
-  it('initializes to given values', () => {
+  it('initializes to given values', async () => {
     const settings = {
       apiKey: 'apiKey',
       network: Network.Mainnet,
@@ -29,6 +29,9 @@ describe('Tonfura class', () => {
     expect(tonfura.config.network).toBe(settings.network);
     expect(tonfura.config.maxRetries).toBe(settings.maxRetries);
     expect(tonfura.config.url).toBe(settings.url);
+
+    const provider = await tonfura.config.getProvider();
+    expect(provider.baseUrl).toBe(settings.url);
   });
 
   it('reuses the same provider', async () => {
