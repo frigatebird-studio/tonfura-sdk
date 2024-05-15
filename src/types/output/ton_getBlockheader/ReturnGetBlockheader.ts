@@ -134,6 +134,10 @@ export class ReturnGetBlockheader {
   gen_utime: number;
 
   @Expose()
+  @IsNumber()
+  vert_seqno: number;
+
+  @Expose()
   @IsArray()
   @ValidateNested({each: true})
   prev_blocks: PrevBlock[];

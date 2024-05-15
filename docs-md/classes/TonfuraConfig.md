@@ -1,108 +1,97 @@
-[tonfura-sdk](../README.md) / [Exports](../modules.md) / TonfuraConfig
+[**tonfura-sdk**](../README.md) • **Docs**
+
+***
+
+[tonfura-sdk](../globals.md) / TonfuraConfig
 
 # Class: TonfuraConfig
 
 This class holds the config information for the SDK client instance and
 exposes the underlying providers for more advanced use cases.
 
-## Table of contents
-
-### Constructors
-
-- [constructor](TonfuraConfig.md#constructor)
-
-### Properties
-
-- [apiKey](TonfuraConfig.md#apikey)
-- [maxRetries](TonfuraConfig.md#maxretries)
-- [network](TonfuraConfig.md#network)
-- [url](TonfuraConfig.md#url)
-
-### Methods
-
-- [getProvider](TonfuraConfig.md#getprovider)
-
 ## Constructors
 
-### constructor
+### new TonfuraConfig()
 
-• **new TonfuraConfig**(`config?`)
+> **new TonfuraConfig**(`config`?): [`TonfuraConfig`](TonfuraConfig.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `config?` | `TonfuraSettings` |
+• **config?**: `TonfuraSettings`
 
-#### Defined in
+#### Returns
 
-[api/TonfuraConfig.ts:39](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/TonfuraConfig.ts#L39)
+[`TonfuraConfig`](TonfuraConfig.md)
+
+#### Source
+
+[api/TonfuraConfig.ts:39](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/TonfuraConfig.ts#L39)
 
 ## Properties
 
 ### apiKey
 
-• `Readonly` **apiKey**: `string`
+> `readonly` **apiKey**: `string`
 
 The Tonfura API key.
 
-#### Defined in
+#### Source
 
-[api/TonfuraConfig.ts:18](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/TonfuraConfig.ts#L18)
+[api/TonfuraConfig.ts:18](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/TonfuraConfig.ts#L18)
 
-___
+***
 
 ### maxRetries
 
-• `Readonly` **maxRetries**: `number`
+> `readonly` **maxRetries**: `number`
 
 The maximum number of retries to perform.
 
-#### Defined in
+#### Source
 
-[api/TonfuraConfig.ts:24](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/TonfuraConfig.ts#L24)
+[api/TonfuraConfig.ts:24](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/TonfuraConfig.ts#L24)
 
-___
+***
 
 ### network
 
-• `Readonly` **network**: [`Network`](../enums/Network.md)
+> `readonly` **network**: [`Network`](../enumerations/Network.md)
 
 The Network that this SDK is associated with.
 
-#### Defined in
+#### Source
 
-[api/TonfuraConfig.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/TonfuraConfig.ts#L21)
+[api/TonfuraConfig.ts:21](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/TonfuraConfig.ts#L21)
 
-___
+***
 
-### url
+### url?
 
-• `Optional` `Readonly` **url**: `string`
+> `optional` `readonly` **url**: `string`
 
 The optional hardcoded URL to send requests to instead of using the network
 and apiKey.
 
-#### Defined in
+#### Source
 
-[api/TonfuraConfig.ts:30](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/TonfuraConfig.ts#L30)
+[api/TonfuraConfig.ts:30](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/TonfuraConfig.ts#L30)
 
 ## Methods
 
-### getProvider
+### getProvider()
 
-▸ **getProvider**(): `Promise`<[`TonfuraProvider`](TonfuraProvider.md)\>
+> **getProvider**(): `Promise`\<[`TonfuraProvider`](TonfuraProvider.md)\>
 
 Returns an TonfuraProvider instance. Only one provider is created per
 Tonfura instance.
 
-The TonfuraProvider is a wrapper around `axios` class and
-has been expanded to support Tonfura's APIs.
+The TonfuraProvider is a wrapper around `axios` class and has been expanded
+to support Tonfura's APIs.
 
 #### Returns
 
-`Promise`<[`TonfuraProvider`](TonfuraProvider.md)\>
+`Promise`\<[`TonfuraProvider`](TonfuraProvider.md)\>
 
-#### Defined in
+#### Source
 
-[api/TonfuraConfig.ts:55](https://github.com/frigatebird-studio/tonfura-sdk/blob/02b08b5/src/api/TonfuraConfig.ts#L55)
+[api/TonfuraConfig.ts:55](https://github.com/frigatebird-studio/tonfura-sdk/blob/f15b2955edbdca92a3459e41d07c042cafc9718a/src/api/TonfuraConfig.ts#L55)

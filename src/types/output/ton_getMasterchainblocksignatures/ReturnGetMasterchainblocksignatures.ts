@@ -52,4 +52,8 @@ export class ReturnGetMasterchainblocksignatures {
   @ValidateNested()
   @Type(() => Signature)
   signatures: Signature[];
+
+  @Expose()
+  @IsString()
+  '@extra': string;
 }

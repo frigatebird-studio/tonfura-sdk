@@ -18,6 +18,10 @@ class LastTransactionId {
 
 class BlockId {
   @Expose()
+  @IsString()
+  '@type': string;
+
+  @Expose()
   @IsInt()
   workchain: number;
 

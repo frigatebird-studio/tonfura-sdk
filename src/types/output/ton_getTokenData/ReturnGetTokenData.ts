@@ -30,7 +30,7 @@ class Data {
 
   @IsOptional()
   @IsString()
-  data: string;
+  data?: string;
 }
 
 class JettonContent {

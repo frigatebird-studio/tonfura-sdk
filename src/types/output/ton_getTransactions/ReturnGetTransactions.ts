@@ -1,5 +1,5 @@
 import {Expose, Type} from 'class-transformer';
-import {IsString, ValidateNested, IsInt, ValidateIf} from 'class-validator';
+import {IsString, ValidateNested, IsInt, ValidateIf, IsOptional} from 'class-validator';
 
 class AccountAddress {
   @Expose()
@@ -61,9 +61,9 @@ class RawMessage {
   @IsString()
   message: string;
 
-  // @Expose()
-  // @ValidateNested()
-  // @Type(() => MsgDataRaw)
+  @Expose()
+  @ValidateNested()
+  @Type(() => MsgDataRaw)
   msg_data: MsgDataRaw | MsgDataText | MsgDataEncrypt;
 }
 
@@ -87,6 +87,7 @@ class MsgDataText {
   '@type': string;
 
   @Expose()
+  @IsOptional()
   @IsString()
   text: string;
 }
@@ -134,25 +135,14 @@ class OutMsg {
   @IsString()
   body_hash: string;
 
-  // @Expose()
-  // @ValidateNested()
-  // @Type(() => MsgDataText)
+  @Expose()
+  @ValidateNested()
+  @Type(() => MsgDataText)
   msg_data: MsgDataText | MsgDataRaw | MsgDataEncrypt;
 
   @Expose()
   @IsString()
   message: string;
-}
-
-class TransactionId {
-  @Expose()
-  @IsString()
-  '@type': string;
-
-  @Expose()
-  @ValidateNested()
-  @Type(() => InternalTransactionId)
-  transaction_id: InternalTransactionId;
 }
 
 export class ReturnGetTransactions {
@@ -163,7 +153,7 @@ export class ReturnGetTransactions {
   @Expose()
   @ValidateNested()
   @Type(() => AccountAddress)
-  address: string;
+  address: AccountAddress;
 
   @Expose()
   @IsInt()
@@ -175,8 +165,8 @@ export class ReturnGetTransactions {
 
   @Expose()
   @ValidateNested()
-  @Type(() => TransactionId)
-  transaction_id: TransactionId;
+  @Type(() => InternalTransactionId)
+  transaction_id: InternalTransactionId;
 
   @Expose()
   @IsString()

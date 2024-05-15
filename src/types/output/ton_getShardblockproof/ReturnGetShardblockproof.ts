@@ -86,4 +86,8 @@ export class ReturnGetShardblockproof {
   @ValidateNested()
   @Type(() => BlockLinkBack)
   mc_proof: BlockLinkBack[];
+  
+  @Expose()
+  @IsString()
+  '@extra': string;
 }

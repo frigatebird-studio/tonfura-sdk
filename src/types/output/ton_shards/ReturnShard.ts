@@ -1,4 +1,4 @@
-import {Expose} from 'class-transformer';
+import {Expose, Type} from 'class-transformer';
 import {IsString, IsInt, ValidateNested, IsArray} from 'class-validator';
 
 class ShardsBlockIdExt {
@@ -34,6 +34,7 @@ export class ReturnShard {
 
   @Expose()
   @IsArray()
+  @Type(() => ShardsBlockIdExt)
   @ValidateNested({each: true})
   shards: ShardsBlockIdExt[];
 

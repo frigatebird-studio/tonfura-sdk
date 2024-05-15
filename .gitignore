@@ -17,3 +17,7 @@ temp
 
 # VSCode History Extension
 .history
+
+coverage
+
+test/mock
