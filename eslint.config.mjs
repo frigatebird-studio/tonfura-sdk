@@ -23,7 +23,14 @@ export default [
         project: './tsconfig.json'
       }
     },
-    ignores: ['.eslint.config.mjs', 'rollup.config.js', 'src/types/output/**'],
+    ignores: [
+      '.eslint.config.mjs',
+      'rollup.config.js',
+      'src/types/output/**',
+      'test/**',
+      'dist/**',
+      'node_modules/**'
+    ],
     rules: {
       curly: ['error', 'all'],
       'no-extra-label': 'error',
