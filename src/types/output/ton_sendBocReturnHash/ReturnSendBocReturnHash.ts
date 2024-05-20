@@ -1,3 +1,4 @@
+/* istanbul ignore file -- @preserve */
 import {Expose} from 'class-transformer';
 import {IsString} from 'class-validator';
 

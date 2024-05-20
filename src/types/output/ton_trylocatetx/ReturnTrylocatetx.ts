@@ -1,3 +1,4 @@
+/* istanbul ignore file -- @preserve */
 import {Expose, Type} from 'class-transformer';
 import {IsString, ValidateNested, IsInt, ValidateIf} from 'class-validator';
 
