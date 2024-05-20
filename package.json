@@ -16,7 +16,6 @@
     "lint-file": "eslint --fix",
     "test": "vitest test/unit",
     "test:coverage": "vitest run --coverage --coverage.reportOnFailure",
-    "docs": "typedoc --out docs src/index.ts",
     "docs-md": "typedoc --plugin typedoc-plugin-markdown --out docs-md src/index.ts",
     "prepare": "husky install"
   },
