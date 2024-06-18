@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { mock } from '../mock/runGetMethodResponse';
 import { methodsMap } from '../pre-generate-params';
 import { typeTest } from './utlis/type-helper';
@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { ReturnCall } from '~/src/types/output/ton_runGetMethod';
 import { Network, Tonfura } from '~/src';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('runGetMethodResponse', () => {
   describe('should return correct payload', async () => {
@@ -24,10 +30,10 @@ describe('runGetMethodResponse', () => {
     const res = await tonfura.core.runGetMethod(methodsMap['runGetMethod']!);
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith(
-        'ton_runGetMethod',
-        methodsMap['runGetMethod']
-      );
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_runGetMethod',
+        params: methodsMap['runGetMethod']
+      });
     });
 
     it('should return status 200', () => {

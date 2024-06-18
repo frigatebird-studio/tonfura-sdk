@@ -1,13 +1,19 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { methodsMap } from '../pre-generate-params';
 import { mock } from '../mock/packAddressResponse';
 import { typeTest } from './utlis/type-helper';
 import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('packAddressResponse', () => {
   describe('should return correct payload', async () => {
@@ -23,8 +29,11 @@ describe('packAddressResponse', () => {
     const res = await tonfura.core.packAddress(methodsMap['packAddress']!);
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith('ton_packAddress', {
-        address: methodsMap['packAddress']
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_packAddress',
+        params: {
+          address: methodsMap['packAddress']
+        }
       });
     });
 

@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 import { ReturnGetExtendedaddressinformation } from '~/src/types/output/ton_getExtendedaddressinformation';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getExtendedAddressInformation', () => {
   describe('should return correct payload', async () => {
@@ -26,12 +32,12 @@ describe('getExtendedAddressInformation', () => {
     );
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith(
-        'ton_getExtendedAddressInformation',
-        {
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getExtendedAddressInformation',
+        params: {
           address: methodsMap['getExtendedAddressInformation']
         }
-      );
+      });
     });
 
     it('should return status 200', () => {

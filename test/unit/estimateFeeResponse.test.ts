@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { mock } from '../mock/estimateFeeResponse';
 import { methodsMap } from '../pre-generate-params';
 import { typeTest } from './utlis/type-helper';
@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { ReturnEstimatefee } from '~/src/types/output/ton_estimatefee';
 import { Network, Tonfura } from '~/src';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('estimateFeeResponse', () => {
   describe('should return correct payload', async () => {
@@ -24,10 +30,10 @@ describe('estimateFeeResponse', () => {
     const res = await tonfura.core.estimateFee(methodsMap['estimateFee']!);
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith(
-        'ton_estimateFee',
-        methodsMap['estimateFee']
-      );
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_estimateFee',
+        params: methodsMap['estimateFee']
+      });
     });
 
     it('should return status 200', () => {

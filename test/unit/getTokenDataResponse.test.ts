@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { mock } from '../mock/getTokenDataResponse';
 import { methodsMap } from '../pre-generate-params';
 import { typeTest } from './utlis/type-helper';
@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { ReturnGetTokenData } from '~/src/types/output/ton_getTokenData';
 import { Network, Tonfura } from '~/src';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getTokenDataResponse', () => {
   describe('should return correct payload', async () => {
@@ -24,8 +30,11 @@ describe('getTokenDataResponse', () => {
     const res = await tonfura.core.getTokenData(methodsMap['getTokenData']!);
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith('ton_getTokenData', {
-        address: methodsMap['getTokenData']
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getTokenData',
+        params: {
+          address: methodsMap['getTokenData']
+        }
       });
     });
 

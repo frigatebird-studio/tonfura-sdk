@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 import { ReturnGetBlockheader } from '~/src/types/output/ton_getBlockheader';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getBlockHeaderResponse', () => {
   describe('should return correct payload', async () => {
@@ -26,10 +32,10 @@ describe('getBlockHeaderResponse', () => {
     );
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith(
-        'ton_getBlockHeader',
-        methodsMap['getBlockHeader']
-      );
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getBlockHeader',
+        params: methodsMap['getBlockHeader']
+      });
     });
 
     it('should return status 200', () => {

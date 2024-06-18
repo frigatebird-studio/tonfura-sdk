@@ -1,13 +1,19 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { mock } from '../mock/getMasterchainInfoResponse';
 import { typeTest } from './utlis/type-helper';
 import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { ReturnGetMasterchaininfo } from '~/src/types/output/ton_getMasterchaininfo';
 import { Network, Tonfura } from '~/src';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getMasterchainInfoResponse', () => {
   describe('should return correct payload', async () => {
@@ -23,7 +29,9 @@ describe('getMasterchainInfoResponse', () => {
     const res = await tonfura.core.getMasterchainInfo();
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith('ton_getMasterchainInfo');
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getMasterchainInfo'
+      });
     });
 
     it('should return status 200', () => {

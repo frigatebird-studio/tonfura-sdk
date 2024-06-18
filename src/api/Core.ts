@@ -1,4 +1,4 @@
-import { MethodV1, MethodV2 } from '../constants';
+import { MethodV1 } from '../constants';
 import * as TonTypes from '../types/ton-types';
 import { TonfuraConfig } from './TonfuraConfig';
 
@@ -27,7 +27,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetAddressInformationParams,
       TonTypes.GetAddressInformationResult
-    >(MethodV1.TON_GET_ADDRESS_INFO, { address });
+    >({
+      method: MethodV1.TON_GET_ADDRESS_INFO,
+      params: { address }
+    });
   }
 
   /**
@@ -47,7 +50,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetExtendedaddressinformationParams,
       TonTypes.GetExtendedaddressinformationResult
-    >(MethodV1.TON_GET_EXTENDEDADDRESSINFORMATION, { address });
+    >({
+      method: MethodV1.TON_GET_EXTENDEDADDRESSINFORMATION,
+      params: { address }
+    });
   }
 
   /**
@@ -65,7 +71,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetWalletinformationParams,
       TonTypes.GetWalletinformationResult
-    >(MethodV1.TON_GET_WALLET_INFORMATION, { address });
+    >({
+      method: MethodV1.TON_GET_WALLET_INFORMATION,
+      params: { address }
+    });
   }
 
   /**
@@ -81,7 +90,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetAddressbalanceParams,
       TonTypes.GetAddressbalanceResult
-    >(MethodV1.TON_GET_ADDRESS_BALANCE, { address });
+    >({
+      method: MethodV1.TON_GET_ADDRESS_BALANCE,
+      params: { address }
+    });
   }
 
   /**
@@ -96,7 +108,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetAddressstateParams,
       TonTypes.GetAddressstateResult
-    >(MethodV1.TON_GET_ADDRESSSTATE, { address });
+    >({
+      method: MethodV1.TON_GET_ADDRESSSTATE,
+      params: { address }
+    });
   }
 
   /**
@@ -110,7 +125,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.PackAddressParams,
       TonTypes.PackAddressResult
-    >(MethodV1.TON_PACK_ADDRESS, { address });
+    >({
+      method: MethodV1.TON_PACK_ADDRESS,
+      params: { address }
+    });
   }
 
   /**
@@ -124,7 +142,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.UnpackAddressParams,
       TonTypes.UnpackAddressResult
-    >(MethodV1.TON_UNPACK_ADDRESS, { address });
+    >({
+      method: MethodV1.TON_UNPACK_ADDRESS,
+      params: { address }
+    });
   }
 
   /**
@@ -138,7 +159,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.DetectAddressParams,
       TonTypes.DetectAddressResult
-    >(MethodV1.TON_DETECT_ADDRESS, { address });
+    >({
+      method: MethodV1.TON_DETECT_ADDRESS,
+      params: { address }
+    });
   }
 
   /**
@@ -152,7 +176,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetTokenDataParams,
       TonTypes.GetTokenDataResult
-    >(MethodV1.TON_GET_TOKEN_DATA, { address });
+    >({
+      method: MethodV1.TON_GET_TOKEN_DATA,
+      params: { address }
+    });
   }
 
   /**
@@ -165,7 +192,9 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetMasterchainInfoParams,
       TonTypes.GetMasterchainInfoResult
-    >(MethodV1.TON_GET_MASTERCHAININFO);
+    >({
+      method: MethodV1.TON_GET_MASTERCHAININFO
+    });
   }
 
   /**
@@ -181,7 +210,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetMasterchainBlockSignaturesParams,
       TonTypes.GetMasterchainBlockSignaturesResult
-    >(MethodV1.TON_GET_MASTERCHAINBLOCKSIGNATURES, { seqno });
+    >({
+      method: MethodV1.TON_GET_MASTERCHAINBLOCKSIGNATURES,
+      params: { seqno }
+    });
   }
 
   /**
@@ -195,7 +227,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetShardBlockProofParams,
       TonTypes.GetShardBlockProofResult
-    >(MethodV1.TON_GET_SHARDBLOCKPROOF, params);
+    >({
+      method: MethodV1.TON_GET_SHARDBLOCKPROOF,
+      params
+    });
   }
 
   /**
@@ -208,7 +243,9 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetConsensusBlockParams,
       TonTypes.GetConsensusBlockResult
-    >(MethodV1.TON_GET_CONSENSUSBLOCK);
+    >({
+      method: MethodV1.TON_GET_CONSENSUSBLOCK
+    });
   }
 
   /**
@@ -222,7 +259,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.LookupBlockParams,
       TonTypes.LookupBlockResult
-    >(MethodV1.TON_LOOKUP_BLOCK, params);
+    >({
+      method: MethodV1.TON_LOOKUP_BLOCK,
+      params
+    });
   }
 
   /**
@@ -236,7 +276,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.ShardsParams,
       TonTypes.ShardsResult
-    >(MethodV1.TON_SHARDS, { seqno });
+    >({
+      method: MethodV1.TON_SHARDS,
+      params: { seqno }
+    });
   }
 
   /**
@@ -250,7 +293,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetBlockHeaderParams,
       TonTypes.GetBlockHeaderResult
-    >(MethodV1.TON_GET_BLOCKHEADER, params);
+    >({
+      method: MethodV1.TON_GET_BLOCKHEADER,
+      params
+    });
   }
 
   /**
@@ -264,7 +310,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetTransactionsParams,
       TonTypes.GetTransactionsResult
-    >(MethodV1.TON_GET_TRANSACTIONS, params);
+    >({
+      method: MethodV1.TON_GET_TRANSACTIONS,
+      params
+    });
   }
 
   /**
@@ -278,7 +327,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetBlockTransactionsParams,
       TonTypes.GetBlockTransactionsResult
-    >(MethodV1.TON_GET_BLOCK_TRANSACTIONS, params);
+    >({
+      method: MethodV1.TON_GET_BLOCK_TRANSACTIONS,
+      params
+    });
   }
 
   /**
@@ -292,7 +344,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.TryLocateTxParams,
       TonTypes.TryLocateTxResult
-    >(MethodV1.TON_TRYLOCATETX, params);
+    >({
+      method: MethodV1.TON_TRYLOCATETX,
+      params
+    });
   }
 
   /**
@@ -306,7 +361,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.TryLocateResultTxParams,
       TonTypes.TryLocateResultTxResult
-    >(MethodV1.TON_TRYLOCATERESULTTX, params);
+    >({
+      method: MethodV1.TON_TRYLOCATERESULTTX,
+      params
+    });
   }
 
   /**
@@ -320,7 +378,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.TryLocateSourceTxParams,
       TonTypes.TryLocateSourceTxResult
-    >(MethodV1.TON_TRYLOCATESOURCETX, params);
+    >({
+      method: MethodV1.TON_TRYLOCATESOURCETX,
+      params
+    });
   }
 
   /**
@@ -334,7 +395,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.GetConfigParamParams,
       TonTypes.GetConfigParamResult
-    >(MethodV1.TON_GET_CONFIGPARAM, params);
+    >({
+      method: MethodV1.TON_GET_CONFIGPARAM,
+      params
+    });
   }
 
   /**
@@ -348,7 +412,10 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.RunGetMethodParams,
       TonTypes.RunGetMethodResult
-    >(MethodV1.TON_RUN_GET_METHOD, params);
+    >({
+      method: MethodV1.TON_RUN_GET_METHOD,
+      params
+    });
   }
 
   /**
@@ -363,46 +430,9 @@ export class Core {
     return provider.sendJsonRpcRequest<
       TonTypes.EstimatefeeParams,
       TonTypes.EstimatefeeResult
-    >(MethodV1.TON_ESTIMATEFEE, params);
-  }
-
-  async jettonMasters(params: TonTypes.JettonMastersParams) {
-    const provider = await this.config.getProvider();
-    return provider.sendJsonRpcRequest<
-      TonTypes.JettonMastersParams,
-      TonTypes.JettonMastersResult
-    >(MethodV2.TON_JETTON_MASTERS, params, 'v2');
-  }
-
-  async jettonWallets(params: TonTypes.JettonWalletsParams) {
-    const provider = await this.config.getProvider();
-    return provider.sendJsonRpcRequest<
-      TonTypes.JettonWalletsParams,
-      TonTypes.JettonWalletsResult
-    >(MethodV2.TON_JETTON_WALLETS, params, 'v2');
-  }
-
-  async jettonTransfers(params: TonTypes.JettonTransfersParams) {
-    const provider = await this.config.getProvider();
-    return provider.sendJsonRpcRequest<
-      TonTypes.JettonTransfersParams,
-      TonTypes.JettonTransfersResult
-    >(MethodV2.TON_JETTON_TRANSFERS, params, 'v2');
-  }
-
-  async jettonBurns(params: TonTypes.JettonBurnsParams) {
-    const provider = await this.config.getProvider();
-    return provider.sendJsonRpcRequest<
-      TonTypes.JettonBurnsParams,
-      TonTypes.JettonBurnsResult
-    >(MethodV2.TON_JETTON_BURNS, params, 'v2');
-  }
-
-  async nftItems(params: TonTypes.NFTItemsParams) {
-    const provider = await this.config.getProvider();
-    return provider.sendJsonRpcRequest<
-      TonTypes.NFTItemsParams,
-      TonTypes.NFTItemsResult
-    >(MethodV2.TON_NFT_ITEMS, params, 'v2');
+    >({
+      method: MethodV1.TON_ESTIMATEFEE,
+      params
+    });
   }
 }

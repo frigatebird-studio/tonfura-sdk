@@ -1,13 +1,19 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { mock } from '../mock/getConsensusBlockResponse';
 import { typeTest } from './utlis/type-helper';
 import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 import { ReturnConsensusblock } from '~/src/types/output/ton_getConsensusblock';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getConsensusBlockResponse', () => {
   describe('should return correct payload', async () => {
@@ -23,7 +29,9 @@ describe('getConsensusBlockResponse', () => {
     const res = await tonfura.core.getConsensusBlock();
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith('ton_getConsensusBlock');
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getConsensusBlock'
+      });
     });
 
     it('should return status 200', () => {
