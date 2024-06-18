@@ -1,13 +1,14 @@
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescriptPlugin from 'rollup-plugin-typescript2';
+import json from '@rollup/plugin-json';
 
 import pkg from './package.json';
 
 const TRUE_ROOT = 'index';
 const roots = [TRUE_ROOT];
 const formats = ['cjs', 'esm', 'es'];
-const plugins = [typescriptPlugin(), nodeResolve(), commonjs()];
+const plugins = [typescriptPlugin(), nodeResolve(), commonjs(), json()];
 
 // e.g. dirFromPath("foo/bar/baz") -> "foo/bar"
 function dirFromPath(path) {
