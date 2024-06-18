@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import { MethodV1, MethodV2, Version } from '../constants';
+import { MethodV1, Version } from '../constants';
 import { JsonRpcRequest, JsonRpcResponse } from '../types/json-rpc-types';
 import { version as sdkVersion } from '../../package.json';
 import { TonfuraConfig } from './TonfuraConfig';
@@ -44,7 +44,7 @@ export class TonfuraProvider {
       params,
       version = 'v1'
     }: {
-      method: MethodV1 | MethodV2;
+      method: MethodV1;
       params?: JsonRpcRequestParams;
       version?: Version;
     },
