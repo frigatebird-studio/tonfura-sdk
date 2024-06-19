@@ -1,3 +1,8 @@
+# [1.4.0](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.3.1...v1.4.0) (2024-06-19)
+
+- Fix return type error
+- Add axios customized options
+
 ## [1.3.1](https://github.com/frigatebird-studio/tonfura-sdk/compare/v1.3.0...v1.3.1) (2024-04-08)
 
 ### Bug Fixes
