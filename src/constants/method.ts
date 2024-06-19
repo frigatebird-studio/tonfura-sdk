@@ -33,10 +33,4 @@ export enum MethodV1 {
   TON_ESTIMATEFEE = 'ton_estimateFee'
 }
 
-export enum MethodV2 {
-  TON_JETTON_MASTERS = 'ton_jetton_masters',
-  TON_JETTON_WALLETS = 'ton_jetton_wallets',
-  TON_JETTON_TRANSFERS = 'ton_jetton_transfers',
-  TON_JETTON_BURNS = 'ton_jetton_burns',
-  TON_NFT_ITEMS = 'ton_nft_items'
-}
+export enum MethodV2 {}

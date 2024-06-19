@@ -24,5 +24,3 @@ export * from './ton_trylocatesourcetx';
 export * from './ton_trylocatetx';
 export * from './ton_unpackAddress';
 export * from './ton_getTokenData';
-export * from './ton_jetton_transfers';
-export * from './ton_nft_items';

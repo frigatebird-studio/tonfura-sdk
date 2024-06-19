@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { methodsMap } from '../pre-generate-params';
 import { mock } from '../mock/lookupBlockResponse';
 import { typeTest } from './utlis/type-helper';
@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 import { ReturnLookupBlock } from '~/src/types/output/ton_lookupBlock';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('lookupBlockResponse', () => {
   describe('should return correct payload', async () => {
@@ -24,10 +30,10 @@ describe('lookupBlockResponse', () => {
     const res = await tonfura.core.lookupBlock(methodsMap['lookupBlock']!);
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith(
-        'ton_lookupBlock',
-        methodsMap['lookupBlock']
-      );
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_lookupBlock',
+        params: methodsMap['lookupBlock']
+      });
     });
 
     it('should return status 200', () => {

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { methodsMap } from '../pre-generate-params';
 import { mock } from '../mock/getWalletInformationResponse';
 import { typeTest } from './utlis/type-helper';
@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 import { ReturnGetWalletinformation } from '~/src/types/output/ton_getWalletinformation';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getWalletInformationResponse', () => {
   describe('should return correct payload', async () => {
@@ -26,8 +32,11 @@ describe('getWalletInformationResponse', () => {
     );
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith('ton_getWalletInformation', {
-        address: methodsMap['getWalletInformation']
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getWalletInformation',
+        params: {
+          address: methodsMap['getWalletInformation']
+        }
       });
     });
 

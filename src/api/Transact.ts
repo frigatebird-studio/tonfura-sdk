@@ -26,7 +26,10 @@ export class Transact {
     return provider.sendJsonRpcRequest<
       TonTypes.SendBocParams,
       TonTypes.SendBocResult
-    >(MethodV1.TON_SEND_BOC, { boc });
+    >({
+      method: MethodV1.TON_SEND_BOC,
+      params: { boc }
+    });
   }
 
   /**
@@ -41,7 +44,10 @@ export class Transact {
     return provider.sendJsonRpcRequest<
       TonTypes.SendBocReturnHashParams,
       TonTypes.SendBocReturnHashResult
-    >(MethodV1.TON_SEND_BOC_RETURN_HASH, { boc });
+    >({
+      method: MethodV1.TON_SEND_BOC_RETURN_HASH,
+      params: { boc }
+    });
   }
 
   // TODO: Implement sendQuery

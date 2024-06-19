@@ -8,7 +8,13 @@ import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 import { ReturnGetConfigparam } from '~/src/types/output/ton_getConfigparam';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getConfigParamResponse', () => {
   describe('should return correct payload', async () => {
@@ -26,10 +32,10 @@ describe('getConfigParamResponse', () => {
     );
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith(
-        'ton_getConfigParam',
-        methodsMap['getConfigParam']
-      );
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getConfigParam',
+        params: methodsMap['getConfigParam']
+      });
     });
 
     it('should return status 200', () => {

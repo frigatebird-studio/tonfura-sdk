@@ -1,13 +1,19 @@
 import 'reflect-metadata';
 
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { mock } from '../mock/getAddressStateResponse';
 import { methodsMap } from '../pre-generate-params';
 import { typeTest } from './utlis/type-helper';
 import { responseTest } from './utlis/jsonRPCResponse-helper';
 import { Network, Tonfura } from '~/src';
 
-vi.spyOn(axios, 'post').mockResolvedValue(mock);
+const mockedAxiosInstance = {
+  post: vi.fn().mockResolvedValue(mock)
+};
+
+vi.spyOn(axios, 'create').mockReturnValue(
+  mockedAxiosInstance as unknown as AxiosInstance
+);
 
 describe('getAddressStateResponse', () => {
   describe('should return correct payload', async () => {
@@ -26,8 +32,11 @@ describe('getAddressStateResponse', () => {
     );
 
     it('pass correct params', () => {
-      expect(methodSpy).toHaveBeenCalledWith('ton_getAddressState', {
-        address: methodsMap['getAddressInformation']
+      expect(methodSpy).toHaveBeenCalledWith({
+        method: 'ton_getAddressState',
+        params: {
+          address: methodsMap['getAddressInformation']
+        }
       });
     });
 

@@ -34,21 +34,6 @@ export const methodsMap: MethodParams = {
     address: 'EQBO7JIbnU1WoNlGdgFtScJrObHXkBp-FT5mAz8UagiG9KQR',
     method: 'get_wallet_data',
     stack: []
-  },
-  jettonMasters: {
-    limit: 2
-  },
-  jettonWallets: {
-    limit: 2
-  },
-  jettonTransfers: {
-    limit: 2
-  },
-  jettonBurns: {
-    limit: 2
-  },
-  nftItems: {
-    limit: 2
   }
 };
 
